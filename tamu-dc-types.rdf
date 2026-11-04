@@ -15,6 +15,7 @@
         <skos:hasTopConcept rdf:resource="https://w3id.org/tamu/dc-types/MapADO"/>
         <skos:hasTopConcept rdf:resource="https://w3id.org/tamu/dc-types/BookADO"/>
         <skos:hasTopConcept rdf:resource="https://w3id.org/tamu/dc-types/PageADO"/>
+        <skos:hasTopConcept rdf:resource="https://w3id.org/tamu/dc-types/JournalADO"/>
         <skos:hasTopConcept rdf:resource="https://w3id.org/tamu/dc-types/ManuscriptADO"/>
         <skos:hasTopConcept rdf:resource="https://w3id.org/tamu/dc-types/LeafADO"/>
         <skos:hasTopConcept rdf:resource="https://w3id.org/tamu/dc-types/AudioObjectADO"/>
@@ -353,7 +354,17 @@
     <skos:relatedMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2014026174"/>
     <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/Document"/>
     <skos:related rdf:resource="https://w3id.org/tamu/dc-types/BookADO"/>
-    <skos:related rdf:resource="https://w3id.org/tamu/dc-types/JournalADO"/>
+    <skos:related>
+      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/JournalADO">
+        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+        <skos:prefLabel xml:lang="en">Journal ADO</skos:prefLabel>
+        <dcterms:source xml:lang="en">ADO Types</dcterms:source>
+        <skos:definition xml:lang="en">A digital object collection on Archipelago that requires OCR and may consist of Book ADOs.</skos:definition>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Book"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Issue"/>
+        <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
+      </skos:Concept>
+    </skos:related>
   </skos:Concept>
   <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Album">
     <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>

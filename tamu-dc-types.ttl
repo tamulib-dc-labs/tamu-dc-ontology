@@ -160,23 +160,14 @@ tamudc:DecoratedPaper a skos:Concept ;
     skos:related tamudc:ImageADO ;
     skos:relatedMatch <http://vocab.getty.edu/page/aat/300265580> .
 
-tamudc:Issue a skos:Concept ;
-    dcterms:source "Browse/Search Types"@en ;
-    skos:broader tamudc:Document ;
-    skos:definition "A single issue from a publication in any medium issued in successive parts bearing numerical or chronological designations and intended to be continued indefinitely, such as periodicals, newspapers, annuals (reports, yearbooks, etc.), journals, memoires, proceedings, transactions, etc., of societies and numbered monographic series."@en ;
-    skos:example "AMC Yell Books",
-        "Committee on South Asian Women Bulletin",
-        "Geographic Atlas of the United States",
-        "Rancher's Roundup",
-        "Texas A&M Athletic Programs - Football",
-        "Texas A&M Yearbooks",
-        "University Catalogs" ;
+tamudc:JournalADO a skos:Concept ;
+    dcterms:source "ADO Types"@en ;
+    skos:definition "A digital object collection on Archipelago that requires OCR and may consist of Book ADOs."@en ;
     skos:inScheme tamudc: ;
-    skos:prefLabel "Issue"@en ;
-    skos:related tamudc:BookADO,
-        tamudc:JournalADO ;
-    skos:relatedMatch <http://id.loc.gov/authorities/genreForms/gf2014026174>,
-        <http://vocab.getty.edu/page/aat/300026642> .
+    skos:prefLabel "Journal ADO"@en ;
+    skos:related tamudc:Book,
+        tamudc:Issue ;
+    skos:topConceptOf tamudc: .
 
 tamudc:Map a skos:Concept ;
     dcterms:source "Browse/Search Types"@en ;
@@ -263,6 +254,50 @@ tamudc:AudioObjectADO a skos:Concept ;
         tamudc:Music ;
     skos:topConceptOf tamudc: .
 
+tamudc:Correspondence a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:broader tamudc:Document ;
+    skos:definition "Any forms of addressed and written communication sent and received, including letters, postcards, memorandums, notes, telegrams, or cables."@en ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2025026080>,
+        <http://vocab.getty.edu/page/aat/300026877> ;
+    skos:example "AMC Early Presidents",
+        "Cherokee Freedmen",
+        "Nicholas A. Basbanes - The Eternal Passion" ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Correspondence"@en ;
+    skos:related tamudc:BookADO,
+        tamudc:ManuscriptADO .
+
+tamudc:Issue a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:broader tamudc:Document ;
+    skos:definition "A single issue from a publication in any medium issued in successive parts bearing numerical or chronological designations and intended to be continued indefinitely, such as periodicals, newspapers, annuals (reports, yearbooks, etc.), journals, memoires, proceedings, transactions, etc., of societies and numbered monographic series."@en ;
+    skos:example "AMC Yell Books",
+        "Committee on South Asian Women Bulletin",
+        "Geographic Atlas of the United States",
+        "Rancher's Roundup",
+        "Texas A&M Athletic Programs - Football",
+        "Texas A&M Yearbooks",
+        "University Catalogs" ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Issue"@en ;
+    skos:related tamudc:BookADO,
+        tamudc:JournalADO ;
+    skos:relatedMatch <http://id.loc.gov/authorities/genreForms/gf2014026174>,
+        <http://vocab.getty.edu/page/aat/300026642> .
+
+tamudc:VideoObjectADO a skos:Concept ;
+    dcterms:source "ADO Types"@en ;
+    skos:definition "A digital object or digital object collection hosted on Archipelago that includes manifestations of motion pictures, stored electronically, in any media or digitized format."@en ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2011026723>,
+        <http://vocab.getty.edu/page/aat/300028682> ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "VideoObject ADO"@en ;
+    skos:related tamudc:Interview,
+        tamudc:Music,
+        tamudc:Video ;
+    skos:topConceptOf tamudc: .
+
 tamudc:Book a skos:Concept ;
     dcterms:source "Browse/Search Types"@en ;
     skos:altLabel "Monograph"@en ;
@@ -281,32 +316,6 @@ tamudc:Book a skos:Concept ;
     skos:prefLabel "Book"@en ;
     skos:related tamudc:BookADO,
         tamudc:ManuscriptADO .
-
-tamudc:Correspondence a skos:Concept ;
-    dcterms:source "Browse/Search Types"@en ;
-    skos:broader tamudc:Document ;
-    skos:definition "Any forms of addressed and written communication sent and received, including letters, postcards, memorandums, notes, telegrams, or cables."@en ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2025026080>,
-        <http://vocab.getty.edu/page/aat/300026877> ;
-    skos:example "AMC Early Presidents",
-        "Cherokee Freedmen",
-        "Nicholas A. Basbanes - The Eternal Passion" ;
-    skos:inScheme tamudc: ;
-    skos:prefLabel "Correspondence"@en ;
-    skos:related tamudc:BookADO,
-        tamudc:ManuscriptADO .
-
-tamudc:VideoObjectADO a skos:Concept ;
-    dcterms:source "ADO Types"@en ;
-    skos:definition "A digital object or digital object collection hosted on Archipelago that includes manifestations of motion pictures, stored electronically, in any media or digitized format."@en ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2011026723>,
-        <http://vocab.getty.edu/page/aat/300028682> ;
-    skos:inScheme tamudc: ;
-    skos:prefLabel "VideoObject ADO"@en ;
-    skos:related tamudc:Interview,
-        tamudc:Music,
-        tamudc:Video ;
-    skos:topConceptOf tamudc: .
 
 tamudc:ManuscriptADO a skos:Concept ;
     dcterms:source "ADO Types"@en ;
@@ -492,6 +501,7 @@ tamudc: a skos:ConceptScheme ;
         tamudc:CreativeWorkSeriesADO,
         tamudc:Document,
         tamudc:ImageADO,
+        tamudc:JournalADO,
         tamudc:LeafADO,
         tamudc:ManuscriptADO,
         tamudc:Map,
