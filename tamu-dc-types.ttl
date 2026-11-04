@@ -1,0 +1,507 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tamudc: <https://w3id.org/tamu/dc-types/> .
+
+tamudc:LeafADO a skos:Concept ;
+    dcterms:source "ADO Types"@en ;
+    skos:definition "An digital object on Archipelago that requires a place to store HTR and ispartof a Manuscript ADO."@en ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Leaf ADO"@en ;
+    skos:topConceptOf tamudc: .
+
+tamudc:PageADO a skos:Concept ;
+    dcterms:source "ADO Types"@en ;
+    skos:definition "A digital object on Archipelago that requires OCR and ispartof a Book ADO."@en ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Page ADO"@en ;
+    skos:topConceptOf tamudc: .
+
+tamudc:Photograph a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:broader tamudc:VisualWork ;
+    skos:definition "Digital surrogates of still images produced from radiation-sensitive materials (sensitive to light, electron beams, or nuclear radiation), generally by means of the chemical action of light on a sensitive film, paper, glass, or metal. Photographs may be positive or negative, opaque or transparent."@en ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2017027249> ;
+    skos:example "A Time of Resolve",
+        "AMC Early Presidents",
+        "Bryan 150th",
+        "College of Medicine Class Photographs",
+        "College of Veterinary Medicine Images",
+        "Cushing Historical Images Collection",
+        "Nicholas A. Basbanes - The Eternal Passion",
+        "Selected Works from University Archives",
+        "Texas A&M Building history",
+        "Toward a Better Living",
+        "University Libraries Events",
+        "Wheelan" ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Photograph"@en ;
+    skos:related tamudc:ImageADO ;
+    skos:relatedMatch <http://vocab.getty.edu/page/aat/300046300> .
+
+tamudc:Album a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:definition "Digital surrogate of books with blank pages used for assembling and presenting a collection, or any unpublished sets of pages that are bound or loose-leaf and have other materials affixed to them or writing or other images made on them. The volume may have been constructed with blank pages that were intended to have materials affixed, or it may have been assembled after having had materials affixed to separate pages."@en ;
+    skos:example "Nicholas A. Basbanes - The Eternal Passion",
+        "University Libraries Events" ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Album"@en ;
+    skos:related tamudc:AlbumADO ;
+    skos:relatedMatch <http://id.loc.gov/authorities/genreForms/gf2014026173>,
+        <http://vocab.getty.edu/page/aat/300026690> ;
+    skos:topConceptOf tamudc: .
+
+tamudc:AlbumADO a skos:Concept ;
+    dcterms:source "ADO Types"@en ;
+    skos:definition "A digital object collection on Archipelago representing books with blank pages used for assembling and presenting a collection, or any unpublished sets of pages that are bound or loose-leaf and have other materials affixed to them or writing or other images made on them. The volume may have been constructed with blank pages that were intended to have materials affixed, or it may have been assembled after having had materials affixed to separate pages."@en ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Album ADO"@en ;
+    skos:related tamudc:Album ;
+    skos:relatedMatch <http://id.loc.gov/authorities/genreForms/gf2014026173>,
+        <http://vocab.getty.edu/page/aat/300026690> ;
+    skos:topConceptOf tamudc: .
+
+tamudc:ArchitecturalDrawing a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:broader tamudc:VisualWork ;
+    skos:definition "Drawings of architecture and drawings for architectural projects, whether the project was executed or not. The term may also refer to any image in a two-dimensional medium that serves this same purpose, including prints and computer images."@en ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2017027217> ;
+    skos:example "A Time of Resolve",
+        "Cushing Historical Image Collection",
+        "Raiford Stripling Collection" ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Architectural drawing"@en ;
+    skos:related tamudc:ImageADO .
+
+tamudc:Article a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:broader tamudc:Document ;
+    skos:definition "Literary compositions prepared for publication as an independent portion of a magazine, newspaper, encyclopedia, or other work."@en ;
+    skos:exactMatch <http://vocab.getty.edu/page/aat/300048715> ;
+    skos:example "Rancher's Roundup" ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Article"@en ;
+    skos:related tamudc:BookADO .
+
+tamudc:BookJacket a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:broader tamudc:VisualWork ;
+    skos:definition "Digital surrogates of detachable, flexible coverings for books, usually of paper cut flush with the covers, folding around the binding with the ends tucked in between the cover boards and the free end paper. For attached outer sheets or boards, use 'covers (gathered matter components).'"@en ;
+    skos:example "Live to Build a Better World" ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Book jacket"@en ;
+    skos:related tamudc:ImageADO ;
+    skos:relatedMatch <http://vocab.getty.edu/page/aat/300195133> .
+
+tamudc:Box_FolderADO a skos:Concept ;
+    dcterms:source "ADO Types"@en ;
+    skos:definition "A digital object collection on Archipelago representing receptacles or formed or flexible coverings designed to hold, store, or ship objects or substances."@en ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Box_Folder ADO"@en ;
+    skos:related tamudc:Container ;
+    skos:relatedMatch <http://vocab.getty.edu/page/aat/300197197> ;
+    skos:topConceptOf tamudc: .
+
+tamudc:Collection a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:definition "Accumulated groups of objects or materials having a focal characteristic and that have been brought together by an individual or organization. A collection comprises multiple items that are conceptually or physically arranged together for the purpose of cataloging or retrieval. A collection differs from an archival group because the items in a collection are bound informally for convenience and do not necessarily share a common provenance or otherwise meet the criteria for an archival group. Collection-level cataloging is appropriate for materials that share one or more common characteristics that make it useful for them to be clustered together. Individual items in a collection may be cataloged separately and linked to the collection. Examples of collections include a selected set of art works in a museum or archive, or separate literary works that do not form a treatise or monograph on a subject but have been combined and issued together as a whole."@en ;
+    skos:exactMatch <http://vocab.getty.edu/page/aat/300025976> ;
+    skos:example "AMC Early Presidents" ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Collection"@en ;
+    skos:related tamudc:CollectionADO ;
+    skos:topConceptOf tamudc: .
+
+tamudc:CollectionADO a skos:Concept ;
+    dcterms:source "ADO Types"@en ;
+    skos:definition "A digital object collection on Archipelago of objects or materials having a focal characteristic and that have been brought together by an individual or organization. A collection comprises multiple items that are conceptually or physically arranged together for the purpose of cataloging or retrieval. A collection differs from an archival group because the items in a collection are bound informally for convenience and do not necessarily share a common provenance or otherwise meet the criteria for an archival group. Collection-level cataloging is appropriate for materials that share one or more common characteristics that make it useful for them to be clustered together. Individual items in a collection may be cataloged separately and linked to the collection. Examples of collections include a selected set of art works in a museum or archive, or separate literary works that do not form a treatise or monograph on a subject but have been combined and issued together as a whole."@en ;
+    skos:exactMatch <http://vocab.getty.edu/page/aat/300025976> ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Collection ADO"@en ;
+    skos:related tamudc:Collection ;
+    skos:topConceptOf tamudc: .
+
+tamudc:Compilation a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:definition "Arrangements, compositions, or constructions comprising a written work, art work, or other work, by arrangement of materials collected from various sources. It may refer to the arrangement of content only (as in a literary work), or of physical pieces."@en ;
+    skos:exactMatch <http://vocab.getty.edu/page/aat/300403969> ;
+    skos:example "Texas A&M Building History Collection" ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Compilation"@en ;
+    skos:related tamudc:CreativeWorkSeriesADO ;
+    skos:scopeNote "This is distinct from a collection because we want child items to be displayed in Mirador and we want to keep Compilations out of the Collections list."@en ;
+    skos:topConceptOf tamudc: .
+
+tamudc:Container a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:definition "Digital surrogate of receptacles or formed or flexible coverings designed to hold, store, or ship objects or substances."@en ;
+    skos:example "Cherokee Freedmen Collection" ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Container"@en ;
+    skos:related tamudc:Box_FolderADO ;
+    skos:relatedMatch <http://vocab.getty.edu/page/aat/300197197> ;
+    skos:topConceptOf tamudc: .
+
+tamudc:CreativeWorkSeriesADO a skos:Concept ;
+    dcterms:source "ADO Types"@en ;
+    skos:definition "A digital object collection on Archipelago containing arrangements, compositions, or constructions comprising a written work, art work, or other work, by arrangement of materials collected from various sources. It may refer to the arrangement of content only (as in a literary work), or of physical pieces."@en ;
+    skos:exactMatch <http://vocab.getty.edu/page/aat/300403969> ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "CreativeWorkSeries ADO"@en ;
+    skos:related tamudc:Compilation ;
+    skos:topConceptOf tamudc: .
+
+tamudc:DecoratedPaper a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:broader tamudc:VisualWork ;
+    skos:definition "Digital surrogates of paper decorated by various means, which might include marbling, stencilling, dyeing, or block printing; to be used for endpapers, wallpaper, wrapping objects, or as a ground for printing or calligraphy."@en ;
+    skos:example "Berger-Cloonan" ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Decorated paper"@en ;
+    skos:related tamudc:ImageADO ;
+    skos:relatedMatch <http://vocab.getty.edu/page/aat/300265580> .
+
+tamudc:Issue a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:broader tamudc:Document ;
+    skos:definition "A single issue from a publication in any medium issued in successive parts bearing numerical or chronological designations and intended to be continued indefinitely, such as periodicals, newspapers, annuals (reports, yearbooks, etc.), journals, memoires, proceedings, transactions, etc., of societies and numbered monographic series."@en ;
+    skos:example "AMC Yell Books",
+        "Committee on South Asian Women Bulletin",
+        "Geographic Atlas of the United States",
+        "Rancher's Roundup",
+        "Texas A&M Athletic Programs - Football",
+        "Texas A&M Yearbooks",
+        "University Catalogs" ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Issue"@en ;
+    skos:related tamudc:BookADO,
+        tamudc:JournalADO ;
+    skos:relatedMatch <http://id.loc.gov/authorities/genreForms/gf2014026174>,
+        <http://vocab.getty.edu/page/aat/300026642> .
+
+tamudc:Map a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:definition "Digital surrogate of graphic or photogrammetric representations of the Earth's surface or a part of it, including physical features and political boundaries, where each point corresponds to a geographical or celestial position according to a definite scale or projection"@en ;
+    skos:example "A Time of Resolve",
+        "Charting Texas",
+        "Cushing Historical Images Collection",
+        "Historic Maps of Cuba",
+        "Maps of Brazos County",
+        "Stephen F. Austin 1830 Map of Texas",
+        "Stephen Powys Marks London",
+        "Woellhof Maps",
+        "World War II Service Maps" ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Map"@en ;
+    skos:related tamudc:MapADO ;
+    skos:relatedMatch <http://id.loc.gov/authorities/genreForms/gf2011026387>,
+        <http://vocab.getty.edu/page/aat/300028094> ;
+    skos:topConceptOf tamudc: .
+
+tamudc:MapADO a skos:Concept ;
+    dcterms:source "ADO Types"@en ;
+    skos:definition "An digital object or digital object collection on Archipelago that depicts graphic or photogrammetric representations of the Earth's surface or a part of it, including physical features and political boundaries, where each point corresponds to a geographical or celestial position according to a definite scale or projection."@en ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Map ADO"@en ;
+    skos:related tamudc:Map ;
+    skos:relatedMatch <http://id.loc.gov/authorities/genreForms/gf2011026387>,
+        <http://vocab.getty.edu/page/aat/300028094> ;
+    skos:topConceptOf tamudc: .
+
+tamudc:Postcard a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:broader tamudc:VisualWork ;
+    skos:definition "Digital surrogate of cards on which a message may be written or printed for mailing without an envelope, usually at a lower rate than that for letters in envelopes."@en ;
+    skos:example "Bryan 150th",
+        "World War I Postcards" ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Postcard"@en ;
+    skos:related tamudc:BookADO,
+        tamudc:ImageADO ;
+    skos:relatedMatch <http://id.loc.gov/authorities/genreForms/gf2014026151>,
+        <http://vocab.getty.edu/page/aat/300026816> .
+
+tamudc:Report a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:broader tamudc:Document ;
+    skos:definition "Official or formal records of a special investigation, in the form of documents containing presentations of facts, proceedings, investigations, or events."@en ;
+    skos:exactMatch <http://vocab.getty.edu/page/aat/300027267> ;
+    skos:example "Frederick Cuny/INTERTECT" ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Report"@en ;
+    skos:related tamudc:BookADO .
+
+tamudc:WebArchive a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:definition "Collections of preserved web pages."@en ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2019026060>,
+        <http://vocab.getty.edu/page/aat/300380353> ;
+    skos:example "Web Archives" ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "WebArchive"@en ;
+    skos:related tamudc:WebArchiveADO ;
+    skos:topConceptOf tamudc: .
+
+tamudc:WebArchiveADO a skos:Concept ;
+    dcterms:source "ADO Types"@en ;
+    skos:definition "A digital object on Archipelago containing collections of preserved web pages."@en ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2019026060>,
+        <http://vocab.getty.edu/page/aat/300380353> ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "WebArchive ADO"@en ;
+    skos:related tamudc:WebArchive ;
+    skos:topConceptOf tamudc: .
+
+tamudc:AudioObjectADO a skos:Concept ;
+    dcterms:source "ADO Types"@en ;
+    skos:definition "A digital object or digital object collection hosted on Archipelago that includes a digital surrogate for discs, tapes, filaments, or other media on which sound has been recorded."@en ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2011026594>,
+        <http://vocab.getty.edu/page/aat/300028633> ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "AudioObject ADO"@en ;
+    skos:related tamudc:Audio,
+        tamudc:Interview,
+        tamudc:Music ;
+    skos:topConceptOf tamudc: .
+
+tamudc:Book a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:altLabel "Monograph"@en ;
+    skos:broader tamudc:Document ;
+    skos:definition "Separate treatises on a particular subject, typically written expositions of a subject narrow enough in scope to exclude all but a single aspect of the subject, for example, a study of the works of a single artist. In book cataloging, non-serial bibliographic items complete in one part or in a finite number of separate parts."@en ;
+    skos:exactMatch <http://vocab.getty.edu/page/aat/300060417> ;
+    skos:example "AMC Early Presidents",
+        "Bibliography of Science Fiction",
+        "Cushing Exhibit Catalogs",
+        "La Linda Poblana",
+        "Minutes of Houston Oil Company",
+        "Nicholas A. Basbanes - The Eternal Passion",
+        "Primeros Libros",
+        "William Fairfax Gray Diary" ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Book"@en ;
+    skos:related tamudc:BookADO,
+        tamudc:ManuscriptADO .
+
+tamudc:Correspondence a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:broader tamudc:Document ;
+    skos:definition "Any forms of addressed and written communication sent and received, including letters, postcards, memorandums, notes, telegrams, or cables."@en ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2025026080>,
+        <http://vocab.getty.edu/page/aat/300026877> ;
+    skos:example "AMC Early Presidents",
+        "Cherokee Freedmen",
+        "Nicholas A. Basbanes - The Eternal Passion" ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Correspondence"@en ;
+    skos:related tamudc:BookADO,
+        tamudc:ManuscriptADO .
+
+tamudc:VideoObjectADO a skos:Concept ;
+    dcterms:source "ADO Types"@en ;
+    skos:definition "A digital object or digital object collection hosted on Archipelago that includes manifestations of motion pictures, stored electronically, in any media or digitized format."@en ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2011026723>,
+        <http://vocab.getty.edu/page/aat/300028682> ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "VideoObject ADO"@en ;
+    skos:related tamudc:Interview,
+        tamudc:Music,
+        tamudc:Video ;
+    skos:topConceptOf tamudc: .
+
+tamudc:ManuscriptADO a skos:Concept ;
+    dcterms:source "ADO Types"@en ;
+    skos:definition "An digital object or digital object collection on Archipelago that requires a place to store HTR."@en ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Manuscript ADO"@en ;
+    skos:related tamudc:Book,
+        tamudc:Correspondence,
+        tamudc:Document ;
+    skos:topConceptOf tamudc: .
+
+tamudc:Audio a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:definition "Discs, tapes, filaments, or other media on which sound has been recorded."@en ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2011026594>,
+        <http://vocab.getty.edu/page/aat/300028633> ;
+    skos:example "Audio Interviews Nicholas Basbanes",
+        "Los Palabristas",
+        "NASA Recordings",
+        "Owens Folk Music",
+        "Texas A&M Forest Service" ;
+    skos:inScheme tamudc: ;
+    skos:narrower tamudc:Interview,
+        tamudc:Music ;
+    skos:prefLabel "Audio"@en ;
+    skos:related tamudc:AudioObjectADO,
+        tamudc:StreamingVideoADO ;
+    skos:topConceptOf tamudc: .
+
+tamudc:Music a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:broader tamudc:Audio,
+        tamudc:Video ;
+    skos:definition "Performing arts genre having to do with the combining of vocal or instrumental sounds in measured time to communicate emotions, ideas, or states of mind, usually according to cultural standards of rhythm, melody, and, in most Western music, harmony."@en ;
+    skos:exactMatch <http://vocab.getty.edu/page/aat/300054146>,
+        <https://id.loc.gov/authorities/genreForms/gf2014026952> ;
+    skos:example "Music Activities Collection",
+        "Owens Folk Music" ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Music"@en ;
+    skos:related tamudc:StreamingVideoADO .
+
+tamudc:StreamingVideoADO a skos:Concept ;
+    dcterms:source "ADO Types"@en ;
+    skos:definition "A digital object or digital object collection hosted on Avalon but streamed through Archipelago that includes digital surrogate for discs, tapes, filaments, or other media on which sound has been recorded and/or manifestations of motion pictures, stored electronically, in any media or digitized format."@en ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "StreamingVideo ADO"@en ;
+    skos:related tamudc:Audio,
+        tamudc:Interview,
+        tamudc:Music,
+        tamudc:Video ;
+    skos:relatedMatch <http://id.loc.gov/authorities/genreForms/gf2011026594>,
+        <http://id.loc.gov/authorities/genreForms/gf2011026723>,
+        <http://vocab.getty.edu/page/aat/300028633>,
+        <http://vocab.getty.edu/page/aat/300028682> ;
+    skos:topConceptOf tamudc: .
+
+tamudc:Video a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:definition "Manifestations of motion pictures, stored electronically, in any media or digitized format."@en ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2011026723>,
+        <http://vocab.getty.edu/page/aat/300028682> ;
+    skos:example "NASA Recordings",
+        "University Libraries Events" ;
+    skos:inScheme tamudc: ;
+    skos:narrower tamudc:Interview,
+        tamudc:Music ;
+    skos:prefLabel "Video"@en ;
+    skos:related tamudc:StreamingVideoADO,
+        tamudc:VideoObjectADO ;
+    skos:topConceptOf tamudc: .
+
+tamudc:ImageADO a skos:Concept ;
+    dcterms:source "ADO Types"@en ;
+    skos:definition "An digital object or digital object collection on Archipelago that depicts works of art, architecture, and any objects that occupy space, are perceived by the sense of sight, and are created or arranged, rather than naturally occurring. Of special interest are those objects conveying a symbolic or expressive meaning or an aesthetic experience, although visual works are not limited only to such works. Visual works generally exclude the intangible, however, designs for works never constructed may be included. Visual works include pictorial and sculptural works, as well as time-based works such as performance art. They also include utilitarian or ceremonial objects of the type collected or valued by museums, cultures, or individuals. Visual works do not include the performing arts.."@en ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Image ADO"@en ;
+    skos:related tamudc:ArchitecturalDrawing,
+        tamudc:BookJacket,
+        tamudc:DecoratedPaper,
+        tamudc:Postcard,
+        tamudc:VisualWork ;
+    skos:relatedMatch <http://vocab.getty.edu/page/aat/300191086> ;
+    skos:topConceptOf tamudc: .
+
+tamudc:Interview a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:broader tamudc:Audio,
+        tamudc:Document,
+        tamudc:Video ;
+    skos:definition "Statements, transcripts, or recordings of conversations in which one person obtains information from another such as for research purposes, publication, or broadcast."@en ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026115>,
+        <http://vocab.getty.edu/page/aat/300026392> ;
+    skos:example "Audio Interviews from Nicholas Basbanes",
+        "Cherokee Freedmen",
+        "Chicano Movement and Mestizaje Ideology",
+        "Dallas Women's Gallery",
+        "Los Palabristas",
+        "NASA Recordings",
+        "Nicholas A. Basbanes - Interviews",
+        "Nicholas A. Basbanes - The Eternal Passion",
+        "Oral Histories",
+        "Science Fiction Radio Show",
+        "Veterans of the Valley" ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Interview"@en ;
+    skos:related tamudc:AudioObjectADO,
+        tamudc:BookADO,
+        tamudc:StreamingVideoADO,
+        tamudc:VideoObjectADO .
+
+tamudc:VisualWork a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:definition "Digital surrogates of works of art, architecture, and any objects that occupy space, are perceived by the sense of sight, and are created or arranged, rather than naturally occurring. Of special interest are those objects conveying a symbolic or expressive meaning or an aesthetic experience, although visual works are not limited only to such works. Visual works generally exclude the intangible, however, designs for works never constructed may be included. Visual works include pictorial and sculptural works, as well as time-based works such as performance art. They also include utilitarian or ceremonial objects of the type collected or valued by museums, cultures, or individuals. Visual works do not include the performing arts."@en ;
+    skos:example "A Time of Resolve",
+        "Alice in Wonderland",
+        "Cushing Historical Images Collection",
+        "Nicholas A. Basbanes - The Eternal Passion" ;
+    skos:inScheme tamudc: ;
+    skos:narrower tamudc:ArchitecturalDrawing,
+        tamudc:BookJacket,
+        tamudc:DecoratedPaper,
+        tamudc:Photograph,
+        tamudc:Postcard ;
+    skos:prefLabel "Visual work"@en ;
+    skos:related tamudc:ImageADO ;
+    skos:relatedMatch <http://vocab.getty.edu/page/aat/300191086> ;
+    skos:scopeNote "Visual Work (Other) includes all Image ADO type materials that do not fall into a more specific category."@en ;
+    skos:topConceptOf tamudc: .
+
+tamudc:BookADO a skos:Concept ;
+    dcterms:source "ADO Types"@en ;
+    skos:definition "An digital object or digital object collection on Archipelago that requires OCR."@en ;
+    skos:inScheme tamudc: ;
+    skos:prefLabel "Book ADO"@en ;
+    skos:related tamudc:Article,
+        tamudc:Book,
+        tamudc:Correspondence,
+        tamudc:Document,
+        tamudc:Interview,
+        tamudc:Issue,
+        tamudc:Report ;
+    skos:topConceptOf tamudc: .
+
+tamudc:Document a skos:Concept ;
+    dcterms:source "Browse/Search Types"@en ;
+    skos:definition "Physical or digital representations of a body of information designed with the capacity to communicate."@en ;
+    skos:exactMatch <http://vocab.getty.edu/page/aat/300026030> ;
+    skos:example "A Time of Resolve",
+        "AMC Early Presidents",
+        "Charting Texas",
+        "Cherokee Freedmen",
+        "Cushing Historical Images Collection",
+        "Nicholas A. Basbanes - The Eternal Passion",
+        "Selected Works from University Archives" ;
+    skos:inScheme tamudc: ;
+    skos:narrower tamudc:Article,
+        tamudc:Book,
+        tamudc:Correspondence,
+        tamudc:Interview,
+        tamudc:Issue,
+        tamudc:Report ;
+    skos:prefLabel "Document"@en ;
+    skos:related tamudc:BookADO,
+        tamudc:ManuscriptADO ;
+    skos:scopeNote "Document includes all typed or handwritten text (Book and Manuscript ADO types) that does not fall into a more specific category."@en ;
+    skos:topConceptOf tamudc: .
+
+tamudc: a skos:ConceptScheme ;
+    dcterms:description "A SKOS vocabulary combining Archipelago Digital Object (ADO) Types and Browse/Search Types used across Texas A&M University Libraries digital collections (Archipelago)."@en ;
+    dcterms:publisher "Texas A&M University Libraries"@en ;
+    dcterms:title "TAMU Digital Collections Types Vocabulary"@en ;
+    skos:hasTopConcept tamudc:Album,
+        tamudc:AlbumADO,
+        tamudc:Audio,
+        tamudc:AudioObjectADO,
+        tamudc:BookADO,
+        tamudc:Box_FolderADO,
+        tamudc:Collection,
+        tamudc:CollectionADO,
+        tamudc:Compilation,
+        tamudc:Container,
+        tamudc:CreativeWorkSeriesADO,
+        tamudc:Document,
+        tamudc:ImageADO,
+        tamudc:LeafADO,
+        tamudc:ManuscriptADO,
+        tamudc:Map,
+        tamudc:MapADO,
+        tamudc:PageADO,
+        tamudc:StreamingVideoADO,
+        tamudc:Video,
+        tamudc:VideoObjectADO,
+        tamudc:VisualWork,
+        tamudc:WebArchive,
+        tamudc:WebArchiveADO ;
+    skos:prefLabel "TAMU Digital Collections Types Vocabulary"@en .
+

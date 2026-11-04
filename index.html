@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TAMU Digital Collections Types Vocabulary</title>
+<link rel="alternate" type="text/turtle" href="tamu-dc-types.ttl">
+<link rel="alternate" type="application/rdf+xml" href="tamu-dc-types.rdf">
+<style>
+  :root {
+    --maroon: #500000;
+    --maroon-dark: #3a0000;
+    --bg: #ffffff;
+    --bg-alt: #f7f5f3;
+    --text: #222;
+    --muted: #666;
+    --border: #e2ddd8;
+    --pill-bg: #f1ece7;
+    --pill-text: #3a0000;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: "Helvetica Neue", Arial, sans-serif; color: var(--text); background: var(--bg);
+    line-height: 1.55;
+  }
+  header.site {
+    background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+    color: #fff; padding: 2.5rem 1.5rem 2rem;
+  }
+  header.site h1 { margin: 0 0 .25rem; font-size: 1.8rem; }
+  header.site p { margin: .25rem 0; color: #f1e4e4; max-width: 60rem; }
+  .downloads { margin-top: 1.25rem; display: flex; gap: .75rem; flex-wrap: wrap; }
+  .downloads a {
+    background: #fff; color: var(--maroon-dark); text-decoration: none; padding: .5rem 1rem;
+    border-radius: 6px; font-weight: 600; font-size: .9rem;
+  }
+  .downloads a:hover { background: #f1e4e4; }
+  .layout { display: flex; max-width: 1200px; margin: 0 auto; }
+  nav.toc {
+    width: 240px; flex: 0 0 240px; padding: 1.5rem 1rem; border-right: 1px solid var(--border);
+    position: sticky; top: 0; align-self: flex-start; max-height: 100vh; overflow-y: auto;
+    background: var(--bg-alt);
+  }
+  nav.toc h2 { font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+  nav.toc h3 { font-size: .8rem; text-transform: uppercase; color: var(--maroon-dark); margin: 1rem 0 .25rem; }
+  nav.toc ul { list-style: none; margin: 0 0 .5rem; padding: 0; }
+  nav.toc li a { display: block; padding: .2rem 0; color: var(--text); text-decoration: none; font-size: .9rem; }
+  nav.toc li a:hover { color: var(--maroon); text-decoration: underline; }
+  main { flex: 1; padding: 1.5rem 2rem 4rem; min-width: 0; }
+  section.intro { max-width: 48rem; margin-bottom: 2rem; }
+  section.intro h2 { margin-top: 2rem; }
+  pre { background: #2b2b2b; color: #eee; padding: 1rem; border-radius: 6px; overflow-x: auto; font-size: .85rem; }
+  code { background: var(--pill-bg); padding: .1rem .3rem; border-radius: 3px; font-size: .9em; }
+  pre code { background: none; padding: 0; }
+  .callout { border: 1px solid var(--border); border-left: 4px solid var(--maroon); background: var(--bg-alt);
+    padding: 1rem 1.25rem; border-radius: 6px; margin: 1.5rem 0; max-width: 48rem; }
+  .callout-warn { border-left-color: #b45309; }
+  .tree { list-style: none; padding-left: 1rem; }
+  .tree ul { list-style: none; padding-left: 1.25rem; border-left: 1px dashed var(--border); }
+  .tree li { margin: .15rem 0; }
+  .tree a { text-decoration: none; color: var(--maroon-dark); }
+  .tree a:hover { text-decoration: underline; }
+  h2.source-heading { margin-top: 3rem; padding-top: 1rem; border-top: 2px solid var(--border); color: var(--maroon-dark); }
+  article.concept {
+    border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1.25rem 0;
+    scroll-margin-top: 1rem; background: #fff;
+  }
+  article.concept:target { border-color: var(--maroon); box-shadow: 0 0 0 2px rgba(80,0,0,.15); }
+  article.concept h3 { margin: 0 0 .4rem; display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; font-size: 1.15rem; }
+  .badge { font-size: .68rem; text-transform: uppercase; letter-spacing: .03em; background: var(--pill-bg);
+    color: var(--pill-text); padding: .15rem .5rem; border-radius: 999px; font-weight: 600; }
+  .badge-top { background: var(--maroon); color: #fff; }
+  .alt-labels { color: var(--muted); font-size: .85rem; margin-bottom: .5rem; }
+  .definition { margin: .4rem 0 .75rem; }
+  .scope-note { font-size: .88rem; color: var(--muted); border-left: 3px solid var(--border); padding-left: .75rem; margin: .5rem 0; }
+  .rel-row { margin: .35rem 0; font-size: .9rem; display: flex; gap: .5rem; flex-wrap: wrap; align-items: baseline; }
+  .rel-label { color: var(--muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .03em; min-width: 6.5rem; }
+  .pill { background: var(--pill-bg); color: var(--pill-text); padding: .15rem .55rem; border-radius: 999px;
+    text-decoration: none; font-size: .85rem; }
+  .pill:hover { background: #e6dcd4; }
+  .pill-ext { background: #eef2f6; color: #1f4b6e; max-width: 28rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: inline-block; }
+  .pill-undefined { background: #fde8e8; color: #9b1c1c; }
+  details.examples summary { cursor: pointer; font-size: .85rem; color: var(--maroon-dark); margin-top: .5rem; }
+  details.examples ul { margin: .4rem 0 0; }
+  .uri { margin-top: .75rem; font-size: .78rem; }
+  .uri a { color: var(--muted); text-decoration: none; }
+  .uri a:hover { text-decoration: underline; }
+  footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 2rem; border-top: 1px solid var(--border); }
+  @media (max-width: 800px) {
+    .layout { flex-direction: column; }
+    nav.toc { width: auto; flex: none; position: static; max-height: none; border-right: none; border-bottom: 1px solid var(--border); }
+    main { padding: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+<header class="site">
+  <h1>TAMU Digital Collections Types Vocabulary</h1>
+  <p>A SKOS vocabulary of digital object and browse/search types used across Texas A&amp;M University
+     Libraries digital collections (Archipelago). Published by Texas A&amp;M University Libraries.</p>
+  <p><strong>Namespace:</strong> <code>https://w3id.org/tamu/dc-types/</code></p>
+  <div class="downloads">
+    <a href="tamu-dc-types.ttl">Download Turtle (.ttl)</a>
+    <a href="tamu-dc-types.rdf">Download RDF/XML (.rdf)</a>
+    <a href="https://github.com/tamulib-dc-labs/tamu-dc-ontology">View source on GitHub</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="toc">
+    <h2>Contents</h2>
+    <h3>ADO Types</h3><ul><li><a href="#ImageADO">Image ADO</a></li><li><a href="#MapADO">Map ADO</a></li><li><a href="#BookADO">Book ADO</a></li><li><a href="#PageADO">Page ADO</a></li><li><a href="#ManuscriptADO">Manuscript ADO</a></li><li><a href="#LeafADO">Leaf ADO</a></li><li><a href="#AudioObjectADO">AudioObject ADO</a></li><li><a href="#VideoObjectADO">VideoObject ADO</a></li><li><a href="#StreamingVideoADO">StreamingVideo ADO</a></li><li><a href="#WebArchiveADO">WebArchive ADO</a></li><li><a href="#CollectionADO">Collection ADO</a></li><li><a href="#CreativeWorkSeriesADO">CreativeWorkSeries ADO</a></li><li><a href="#Box_FolderADO">Box_Folder ADO</a></li><li><a href="#AlbumADO">Album ADO</a></li></ul><h3>Browse/Search Types</h3><ul><li><a href="#Postcard">Postcard</a></li><li><a href="#Correspondence">Correspondence</a></li><li><a href="#Issue">Issue</a></li><li><a href="#Book">Book</a></li><li><a href="#Article">Article</a></li><li><a href="#Report">Report</a></li><li><a href="#Document">Document</a></li><li><a href="#Map">Map</a></li><li><a href="#Photograph">Photograph</a></li><li><a href="#DecoratedPaper">Decorated paper</a></li><li><a href="#BookJacket">Book jacket</a></li><li><a href="#ArchitecturalDrawing">Architectural drawing</a></li><li><a href="#VisualWork">Visual work</a></li><li><a href="#Interview">Interview</a></li><li><a href="#Music">Music</a></li><li><a href="#Audio">Audio</a></li><li><a href="#Video">Video</a></li><li><a href="#Compilation">Compilation</a></li><li><a href="#Container">Container</a></li><li><a href="#Album">Album</a></li><li><a href="#WebArchive">WebArchive</a></li><li><a href="#Collection">Collection</a></li></ul>
+  </nav>
+  <main>
+    <section class="intro">
+      <h2>About this vocabulary</h2>
+      <p>This vocabulary combines two source files maintained by TAMU Libraries:</p>
+      <ul>
+        <li><strong>ADO Types</strong> &mdash; the underlying Archipelago Digital Object (ADO) types used to
+            model digital objects in the repository (e.g. <em>Image ADO</em>, <em>Map ADO</em>, <em>Book ADO</em>).</li>
+        <li><strong>Browse/Search Types</strong> &mdash; the public-facing genre/format terms end users browse
+            and search by (e.g. <em>Postcard</em>, <em>Correspondence</em>, <em>Photograph</em>), related back
+            to the ADO type(s) that implement them.</li>
+      </ul>
+      <p>Each concept is identified by a dereferenceable URI under <code>https://w3id.org/tamu/dc-types/</code>. Content
+         negotiation is handled via <a href="https://w3id.org">w3id.org</a>, which redirects requests for a
+         concept URI to this GitHub Pages site, choosing a representation based on the client's
+         <code>Accept</code> header:</p>
+      <pre><code># human-readable page
+curl -L -H "Accept: text/html" https://w3id.org/tamu/dc-types/
+
+# Turtle
+curl -L -H "Accept: text/turtle" https://w3id.org/tamu/dc-types/
+
+# RDF/XML
+curl -L -H "Accept: application/rdf+xml" https://w3id.org/tamu/dc-types/</code></pre>
+      <p>See <code>w3id.org.htaccess</code> in the repository for the redirect rules submitted to w3id.org, and
+         <code>README.md</code> for how this site is built and published.</p>
+    </section>
+
+    
+<section class="callout callout-warn">
+  <h3>Dangling references found in source data</h3>
+  <p>The following labels are referenced via <code>skos:broader</code>, <code>skos:narrower</code>,
+  or <code>skos:related</code> but have no corresponding entry in <code>source/*.yml</code>.
+  They render below as unlinked tags. Fix by adding the missing concept or correcting the label in the source YAML.</p>
+  <ul><li>Journal ADO</li></ul>
+</section>
+
+    <section class="intro">
+      <h2>Concept hierarchy</h2>
+      <ul class='tree'><li><a href="#ImageADO">Image ADO</a></li><li><a href="#MapADO">Map ADO</a></li><li><a href="#BookADO">Book ADO</a></li><li><a href="#PageADO">Page ADO</a></li><li><a href="#ManuscriptADO">Manuscript ADO</a></li><li><a href="#LeafADO">Leaf ADO</a></li><li><a href="#AudioObjectADO">AudioObject ADO</a></li><li><a href="#VideoObjectADO">VideoObject ADO</a></li><li><a href="#StreamingVideoADO">StreamingVideo ADO</a></li><li><a href="#WebArchiveADO">WebArchive ADO</a></li><li><a href="#CollectionADO">Collection ADO</a></li><li><a href="#CreativeWorkSeriesADO">CreativeWorkSeries ADO</a></li><li><a href="#Box_FolderADO">Box_Folder ADO</a></li><li><a href="#AlbumADO">Album ADO</a></li><li><a href="#Document">Document</a><ul><li><a href="#Article">Article</a></li><li><a href="#Book">Book</a></li><li><a href="#Correspondence">Correspondence</a></li><li><a href="#Interview">Interview</a></li><li><a href="#Issue">Issue</a></li><li><a href="#Report">Report</a></li></ul></li><li><a href="#Map">Map</a></li><li><a href="#VisualWork">Visual work</a><ul><li><a href="#ArchitecturalDrawing">Architectural drawing</a></li><li><a href="#BookJacket">Book jacket</a></li><li><a href="#DecoratedPaper">Decorated paper</a></li><li><a href="#Photograph">Photograph</a></li><li><a href="#Postcard">Postcard</a></li></ul></li><li><a href="#Audio">Audio</a><ul><li><a href="#Interview">Interview</a></li><li><a href="#Music">Music</a></li></ul></li><li><a href="#Video">Video</a><ul><li><a href="#Interview">Interview</a></li><li><a href="#Music">Music</a></li></ul></li><li><a href="#Compilation">Compilation</a></li><li><a href="#Container">Container</a></li><li><a href="#Album">Album</a></li><li><a href="#WebArchive">WebArchive</a></li><li><a href="#Collection">Collection</a></li></ul>
+    </section>
+
+    <h2 class="source-heading" id="ADOTypes">ADO Types</h2>
+<article class="concept" id="ImageADO">
+  <h3>Image ADO <span class="badge">ADO Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">An digital object or digital object collection on Archipelago that depicts works of art, architecture, and any objects that occupy space, are perceived by the sense of sight, and are created or arranged, rather than naturally occurring. Of special interest are those objects conveying a symbolic or expressive meaning or an aesthetic experience, although visual works are not limited only to such works. Visual works generally exclude the intangible, however, designs for works never constructed may be included. Visual works include pictorial and sculptural works, as well as time-based works such as performance art. They also include utilitarian or ceremonial objects of the type collected or valued by museums, cultures, or individuals. Visual works do not include the performing arts..</p>
+  
+  <div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#VisualWork">Visual work</a> <a class="pill" href="#Postcard">Postcard</a> <a class="pill" href="#DecoratedPaper">Decorated paper</a> <a class="pill" href="#BookJacket">Book jacket</a> <a class="pill" href="#ArchitecturalDrawing">Architectural drawing</a></div><div class="rel-row"><span class="rel-label">Related match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300191086" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300191086</a></div>
+  
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/ImageADO">https://w3id.org/tamu/dc-types/ImageADO</a></div>
+</article>
+<article class="concept" id="MapADO">
+  <h3>Map ADO <span class="badge">ADO Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">An digital object or digital object collection on Archipelago that depicts graphic or photogrammetric representations of the Earth&#x27;s surface or a part of it, including physical features and political boundaries, where each point corresponds to a geographical or celestial position according to a definite scale or projection.</p>
+  
+  <div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#Map">Map</a></div><div class="rel-row"><span class="rel-label">Related match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300028094" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300028094</a> <a class="pill pill-ext" href="http://id.loc.gov/authorities/genreForms/gf2011026387" target="_blank" rel="noopener">http://id.loc.gov/authorities/genreForms/gf2011026387</a></div>
+  
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/MapADO">https://w3id.org/tamu/dc-types/MapADO</a></div>
+</article>
+<article class="concept" id="BookADO">
+  <h3>Book ADO <span class="badge">ADO Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">An digital object or digital object collection on Archipelago that requires OCR.</p>
+  
+  <div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#Book">Book</a> <a class="pill" href="#Issue">Issue</a> <a class="pill" href="#Article">Article</a> <a class="pill" href="#Report">Report</a> <a class="pill" href="#Interview">Interview</a> <a class="pill" href="#Correspondence">Correspondence</a> <a class="pill" href="#Document">Document</a></div>
+  
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/BookADO">https://w3id.org/tamu/dc-types/BookADO</a></div>
+</article>
+<article class="concept" id="PageADO">
+  <h3>Page ADO <span class="badge">ADO Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">A digital object on Archipelago that requires OCR and ispartof a Book ADO.</p>
+  
+  
+  
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/PageADO">https://w3id.org/tamu/dc-types/PageADO</a></div>
+</article>
+<article class="concept" id="ManuscriptADO">
+  <h3>Manuscript ADO <span class="badge">ADO Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">An digital object or digital object collection on Archipelago that requires a place to store HTR.</p>
+  
+  <div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#Book">Book</a> <a class="pill" href="#Correspondence">Correspondence</a> <a class="pill" href="#Document">Document</a></div>
+  
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/ManuscriptADO">https://w3id.org/tamu/dc-types/ManuscriptADO</a></div>
+</article>
+<article class="concept" id="LeafADO">
+  <h3>Leaf ADO <span class="badge">ADO Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">An digital object on Archipelago that requires a place to store HTR and ispartof a Manuscript ADO.</p>
+  
+  
+  
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/LeafADO">https://w3id.org/tamu/dc-types/LeafADO</a></div>
+</article>
+<article class="concept" id="AudioObjectADO">
+  <h3>AudioObject ADO <span class="badge">ADO Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">A digital object or digital object collection hosted on Archipelago that includes a digital surrogate for discs, tapes, filaments, or other media on which sound has been recorded.</p>
+  
+  <div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#Interview">Interview</a> <a class="pill" href="#Music">Music</a> <a class="pill" href="#Audio">Audio</a></div><div class="rel-row"><span class="rel-label">Exact match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300028633" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300028633</a> <a class="pill pill-ext" href="http://id.loc.gov/authorities/genreForms/gf2011026594" target="_blank" rel="noopener">http://id.loc.gov/authorities/genreForms/gf2011026594</a></div>
+  
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/AudioObjectADO">https://w3id.org/tamu/dc-types/AudioObjectADO</a></div>
+</article>
+<article class="concept" id="VideoObjectADO">
+  <h3>VideoObject ADO <span class="badge">ADO Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">A digital object or digital object collection hosted on Archipelago that includes manifestations of motion pictures, stored electronically, in any media or digitized format.</p>
+  
+  <div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#Interview">Interview</a> <a class="pill" href="#Music">Music</a> <a class="pill" href="#Video">Video</a></div><div class="rel-row"><span class="rel-label">Exact match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300028682" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300028682</a> <a class="pill pill-ext" href="http://id.loc.gov/authorities/genreForms/gf2011026723" target="_blank" rel="noopener">http://id.loc.gov/authorities/genreForms/gf2011026723</a></div>
+  
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/VideoObjectADO">https://w3id.org/tamu/dc-types/VideoObjectADO</a></div>
+</article>
+<article class="concept" id="StreamingVideoADO">
+  <h3>StreamingVideo ADO <span class="badge">ADO Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">A digital object or digital object collection hosted on Avalon but streamed through Archipelago that includes digital surrogate for discs, tapes, filaments, or other media on which sound has been recorded and/or manifestations of motion pictures, stored electronically, in any media or digitized format.</p>
+  
+  <div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#Interview">Interview</a> <a class="pill" href="#Music">Music</a> <a class="pill" href="#Audio">Audio</a> <a class="pill" href="#Video">Video</a></div><div class="rel-row"><span class="rel-label">Related match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300028682" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300028682</a> <a class="pill pill-ext" href="http://id.loc.gov/authorities/genreForms/gf2011026723" target="_blank" rel="noopener">http://id.loc.gov/authorities/genreForms/gf2011026723</a> <a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300028633" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300028633</a> <a class="pill pill-ext" href="http://id.loc.gov/authorities/genreForms/gf2011026594" target="_blank" rel="noopener">http://id.loc.gov/authorities/genreForms/gf2011026594</a></div>
+  
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/StreamingVideoADO">https://w3id.org/tamu/dc-types/StreamingVideoADO</a></div>
+</article>
+<article class="concept" id="WebArchiveADO">
+  <h3>WebArchive ADO <span class="badge">ADO Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">A digital object on Archipelago containing collections of preserved web pages.</p>
+  
+  <div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#WebArchive">WebArchive</a></div><div class="rel-row"><span class="rel-label">Exact match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300380353" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300380353</a> <a class="pill pill-ext" href="http://id.loc.gov/authorities/genreForms/gf2019026060" target="_blank" rel="noopener">http://id.loc.gov/authorities/genreForms/gf2019026060</a></div>
+  
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/WebArchiveADO">https://w3id.org/tamu/dc-types/WebArchiveADO</a></div>
+</article>
+<article class="concept" id="CollectionADO">
+  <h3>Collection ADO <span class="badge">ADO Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">A digital object collection on Archipelago of objects or materials having a focal characteristic and that have been brought together by an individual or organization. A collection comprises multiple items that are conceptually or physically arranged together for the purpose of cataloging or retrieval. A collection differs from an archival group because the items in a collection are bound informally for convenience and do not necessarily share a common provenance or otherwise meet the criteria for an archival group. Collection-level cataloging is appropriate for materials that share one or more common characteristics that make it useful for them to be clustered together. Individual items in a collection may be cataloged separately and linked to the collection. Examples of collections include a selected set of art works in a museum or archive, or separate literary works that do not form a treatise or monograph on a subject but have been combined and issued together as a whole.</p>
+  
+  <div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#Collection">Collection</a></div><div class="rel-row"><span class="rel-label">Exact match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300025976" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300025976</a></div>
+  
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/CollectionADO">https://w3id.org/tamu/dc-types/CollectionADO</a></div>
+</article>
+<article class="concept" id="CreativeWorkSeriesADO">
+  <h3>CreativeWorkSeries ADO <span class="badge">ADO Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">A digital object collection on Archipelago containing arrangements, compositions, or constructions comprising a written work, art work, or other work, by arrangement of materials collected from various sources. It may refer to the arrangement of content only (as in a literary work), or of physical pieces.</p>
+  
+  <div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#Compilation">Compilation</a></div><div class="rel-row"><span class="rel-label">Exact match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300403969" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300403969</a></div>
+  
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/CreativeWorkSeriesADO">https://w3id.org/tamu/dc-types/CreativeWorkSeriesADO</a></div>
+</article>
+<article class="concept" id="Box_FolderADO">
+  <h3>Box_Folder ADO <span class="badge">ADO Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">A digital object collection on Archipelago representing receptacles or formed or flexible coverings designed to hold, store, or ship objects or substances.</p>
+  
+  <div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#Container">Container</a></div><div class="rel-row"><span class="rel-label">Related match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300197197" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300197197</a></div>
+  
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/Box_FolderADO">https://w3id.org/tamu/dc-types/Box_FolderADO</a></div>
+</article>
+<article class="concept" id="AlbumADO">
+  <h3>Album ADO <span class="badge">ADO Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">A digital object collection on Archipelago representing books with blank pages used for assembling and presenting a collection, or any unpublished sets of pages that are bound or loose-leaf and have other materials affixed to them or writing or other images made on them. The volume may have been constructed with blank pages that were intended to have materials affixed, or it may have been assembled after having had materials affixed to separate pages.</p>
+  
+  <div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#Album">Album</a></div><div class="rel-row"><span class="rel-label">Related match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300026690" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300026690</a> <a class="pill pill-ext" href="http://id.loc.gov/authorities/genreForms/gf2014026173" target="_blank" rel="noopener">http://id.loc.gov/authorities/genreForms/gf2014026173</a></div>
+  
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/AlbumADO">https://w3id.org/tamu/dc-types/AlbumADO</a></div>
+</article><h2 class="source-heading" id="BrowseSearchTypes">Browse/Search Types</h2>
+<article class="concept" id="Postcard">
+  <h3>Postcard <span class="badge">Browse/Search Types</span></h3>
+  
+  <p class="definition">Digital surrogate of cards on which a message may be written or printed for mailing without an envelope, usually at a lower rate than that for letters in envelopes.</p>
+  
+  <div class="rel-row"><span class="rel-label">Broader</span><a class="pill" href="#VisualWork">Visual work</a></div><div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#BookADO">Book ADO</a> <a class="pill" href="#ImageADO">Image ADO</a></div><div class="rel-row"><span class="rel-label">Related match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300026816" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300026816</a> <a class="pill pill-ext" href="http://id.loc.gov/authorities/genreForms/gf2014026151" target="_blank" rel="noopener">http://id.loc.gov/authorities/genreForms/gf2014026151</a></div>
+  <details class="examples"><summary>Examples (2)</summary><ul><li>World War I Postcards</li><li>Bryan 150th</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/Postcard">https://w3id.org/tamu/dc-types/Postcard</a></div>
+</article>
+<article class="concept" id="Correspondence">
+  <h3>Correspondence <span class="badge">Browse/Search Types</span></h3>
+  
+  <p class="definition">Any forms of addressed and written communication sent and received, including letters, postcards, memorandums, notes, telegrams, or cables.</p>
+  
+  <div class="rel-row"><span class="rel-label">Broader</span><a class="pill" href="#Document">Document</a></div><div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#BookADO">Book ADO</a> <a class="pill" href="#ManuscriptADO">Manuscript ADO</a></div><div class="rel-row"><span class="rel-label">Exact match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300026877" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300026877</a> <a class="pill pill-ext" href="http://id.loc.gov/authorities/genreForms/gf2025026080" target="_blank" rel="noopener">http://id.loc.gov/authorities/genreForms/gf2025026080</a></div>
+  <details class="examples"><summary>Examples (3)</summary><ul><li>AMC Early Presidents</li><li>Cherokee Freedmen</li><li>Nicholas A. Basbanes - The Eternal Passion</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/Correspondence">https://w3id.org/tamu/dc-types/Correspondence</a></div>
+</article>
+<article class="concept" id="Issue">
+  <h3>Issue <span class="badge">Browse/Search Types</span></h3>
+  
+  <p class="definition">A single issue from a publication in any medium issued in successive parts bearing numerical or chronological designations and intended to be continued indefinitely, such as periodicals, newspapers, annuals (reports, yearbooks, etc.), journals, memoires, proceedings, transactions, etc., of societies and numbered monographic series.</p>
+  
+  <div class="rel-row"><span class="rel-label">Broader</span><a class="pill" href="#Document">Document</a></div><div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#BookADO">Book ADO</a> <span class="pill pill-undefined" title="referenced in source but not defined">JournalADO</span></div><div class="rel-row"><span class="rel-label">Related match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300026642" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300026642</a> <a class="pill pill-ext" href="http://id.loc.gov/authorities/genreForms/gf2014026174" target="_blank" rel="noopener">http://id.loc.gov/authorities/genreForms/gf2014026174</a></div>
+  <details class="examples"><summary>Examples (7)</summary><ul><li>AMC Yell Books</li><li>Committee on South Asian Women Bulletin</li><li>Geographic Atlas of the United States</li><li>Rancher&#x27;s Roundup</li><li>Texas A&amp;M Athletic Programs - Football</li><li>Texas A&amp;M Yearbooks</li><li>University Catalogs</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/Issue">https://w3id.org/tamu/dc-types/Issue</a></div>
+</article>
+<article class="concept" id="Book">
+  <h3>Book <span class="badge">Browse/Search Types</span></h3>
+  <div class="alt-labels">Also known as: Monograph</div>
+  <p class="definition">Separate treatises on a particular subject, typically written expositions of a subject narrow enough in scope to exclude all but a single aspect of the subject, for example, a study of the works of a single artist. In book cataloging, non-serial bibliographic items complete in one part or in a finite number of separate parts.</p>
+  
+  <div class="rel-row"><span class="rel-label">Broader</span><a class="pill" href="#Document">Document</a></div><div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#BookADO">Book ADO</a> <a class="pill" href="#ManuscriptADO">Manuscript ADO</a></div><div class="rel-row"><span class="rel-label">Exact match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300060417" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300060417</a></div>
+  <details class="examples"><summary>Examples (8)</summary><ul><li>AMC Early Presidents</li><li>Bibliography of Science Fiction</li><li>Cushing Exhibit Catalogs</li><li>La Linda Poblana</li><li>Minutes of Houston Oil Company</li><li>Nicholas A. Basbanes - The Eternal Passion</li><li>Primeros Libros</li><li>William Fairfax Gray Diary</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/Book">https://w3id.org/tamu/dc-types/Book</a></div>
+</article>
+<article class="concept" id="Article">
+  <h3>Article <span class="badge">Browse/Search Types</span></h3>
+  
+  <p class="definition">Literary compositions prepared for publication as an independent portion of a magazine, newspaper, encyclopedia, or other work.</p>
+  
+  <div class="rel-row"><span class="rel-label">Broader</span><a class="pill" href="#Document">Document</a></div><div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#BookADO">Book ADO</a></div><div class="rel-row"><span class="rel-label">Exact match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300048715" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300048715</a></div>
+  <details class="examples"><summary>Examples (1)</summary><ul><li>Rancher&#x27;s Roundup</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/Article">https://w3id.org/tamu/dc-types/Article</a></div>
+</article>
+<article class="concept" id="Report">
+  <h3>Report <span class="badge">Browse/Search Types</span></h3>
+  
+  <p class="definition">Official or formal records of a special investigation, in the form of documents containing presentations of facts, proceedings, investigations, or events.</p>
+  
+  <div class="rel-row"><span class="rel-label">Broader</span><a class="pill" href="#Document">Document</a></div><div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#BookADO">Book ADO</a></div><div class="rel-row"><span class="rel-label">Exact match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300027267" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300027267</a></div>
+  <details class="examples"><summary>Examples (1)</summary><ul><li>Frederick Cuny/INTERTECT</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/Report">https://w3id.org/tamu/dc-types/Report</a></div>
+</article>
+<article class="concept" id="Document">
+  <h3>Document <span class="badge">Browse/Search Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">Physical or digital representations of a body of information designed with the capacity to communicate.</p>
+  <aside class="scope-note">Document includes all typed or handwritten text (Book and Manuscript ADO types) that does not fall into a more specific category.</aside>
+  <div class="rel-row"><span class="rel-label">Narrower</span><a class="pill" href="#Correspondence">Correspondence</a> <a class="pill" href="#Issue">Issue</a> <a class="pill" href="#Book">Book</a> <a class="pill" href="#Article">Article</a> <a class="pill" href="#Report">Report</a> <a class="pill" href="#Interview">Interview</a></div><div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#BookADO">Book ADO</a> <a class="pill" href="#ManuscriptADO">Manuscript ADO</a></div><div class="rel-row"><span class="rel-label">Exact match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300026030" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300026030</a></div>
+  <details class="examples"><summary>Examples (7)</summary><ul><li>A Time of Resolve</li><li>AMC Early Presidents</li><li>Charting Texas</li><li>Cherokee Freedmen</li><li>Cushing Historical Images Collection</li><li>Nicholas A. Basbanes - The Eternal Passion</li><li>Selected Works from University Archives</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/Document">https://w3id.org/tamu/dc-types/Document</a></div>
+</article>
+<article class="concept" id="Map">
+  <h3>Map <span class="badge">Browse/Search Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">Digital surrogate of graphic or photogrammetric representations of the Earth&#x27;s surface or a part of it, including physical features and political boundaries, where each point corresponds to a geographical or celestial position according to a definite scale or projection</p>
+  
+  <div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#MapADO">Map ADO</a></div><div class="rel-row"><span class="rel-label">Related match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300028094" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300028094</a> <a class="pill pill-ext" href="http://id.loc.gov/authorities/genreForms/gf2011026387" target="_blank" rel="noopener">http://id.loc.gov/authorities/genreForms/gf2011026387</a></div>
+  <details class="examples"><summary>Examples (9)</summary><ul><li>A Time of Resolve</li><li>Charting Texas</li><li>Cushing Historical Images Collection</li><li>Historic Maps of Cuba</li><li>Maps of Brazos County</li><li>Stephen F. Austin 1830 Map of Texas</li><li>Stephen Powys Marks London</li><li>Woellhof Maps</li><li>World War II Service Maps</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/Map">https://w3id.org/tamu/dc-types/Map</a></div>
+</article>
+<article class="concept" id="Photograph">
+  <h3>Photograph <span class="badge">Browse/Search Types</span></h3>
+  
+  <p class="definition">Digital surrogates of still images produced from radiation-sensitive materials (sensitive to light, electron beams, or nuclear radiation), generally by means of the chemical action of light on a sensitive film, paper, glass, or metal. Photographs may be positive or negative, opaque or transparent.</p>
+  
+  <div class="rel-row"><span class="rel-label">Broader</span><a class="pill" href="#VisualWork">Visual work</a></div><div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#ImageADO">Image ADO</a></div><div class="rel-row"><span class="rel-label">Exact match</span><a class="pill pill-ext" href="http://id.loc.gov/authorities/genreForms/gf2017027249" target="_blank" rel="noopener">http://id.loc.gov/authorities/genreForms/gf2017027249</a></div><div class="rel-row"><span class="rel-label">Related match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300046300" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300046300</a></div>
+  <details class="examples"><summary>Examples (12)</summary><ul><li>Bryan 150th</li><li>A Time of Resolve</li><li>AMC Early Presidents</li><li>College of Medicine Class Photographs</li><li>College of Veterinary Medicine Images</li><li>Cushing Historical Images Collection</li><li>Nicholas A. Basbanes - The Eternal Passion</li><li>Selected Works from University Archives</li><li>Texas A&amp;M Building history</li><li>Toward a Better Living</li><li>University Libraries Events</li><li>Wheelan</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/Photograph">https://w3id.org/tamu/dc-types/Photograph</a></div>
+</article>
+<article class="concept" id="DecoratedPaper">
+  <h3>Decorated paper <span class="badge">Browse/Search Types</span></h3>
+  
+  <p class="definition">Digital surrogates of paper decorated by various means, which might include marbling, stencilling, dyeing, or block printing; to be used for endpapers, wallpaper, wrapping objects, or as a ground for printing or calligraphy.</p>
+  
+  <div class="rel-row"><span class="rel-label">Broader</span><a class="pill" href="#VisualWork">Visual work</a></div><div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#ImageADO">Image ADO</a></div><div class="rel-row"><span class="rel-label">Related match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300265580" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300265580</a></div>
+  <details class="examples"><summary>Examples (1)</summary><ul><li>Berger-Cloonan</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/DecoratedPaper">https://w3id.org/tamu/dc-types/DecoratedPaper</a></div>
+</article>
+<article class="concept" id="BookJacket">
+  <h3>Book jacket <span class="badge">Browse/Search Types</span></h3>
+  
+  <p class="definition">Digital surrogates of detachable, flexible coverings for books, usually of paper cut flush with the covers, folding around the binding with the ends tucked in between the cover boards and the free end paper. For attached outer sheets or boards, use &#x27;covers (gathered matter components).&#x27;</p>
+  
+  <div class="rel-row"><span class="rel-label">Broader</span><a class="pill" href="#VisualWork">Visual work</a></div><div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#ImageADO">Image ADO</a></div><div class="rel-row"><span class="rel-label">Related match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300195133" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300195133</a></div>
+  <details class="examples"><summary>Examples (1)</summary><ul><li>Live to Build a Better World</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/BookJacket">https://w3id.org/tamu/dc-types/BookJacket</a></div>
+</article>
+<article class="concept" id="ArchitecturalDrawing">
+  <h3>Architectural drawing <span class="badge">Browse/Search Types</span></h3>
+  
+  <p class="definition">Drawings of architecture and drawings for architectural projects, whether the project was executed or not. The term may also refer to any image in a two-dimensional medium that serves this same purpose, including prints and computer images.</p>
+  
+  <div class="rel-row"><span class="rel-label">Broader</span><a class="pill" href="#VisualWork">Visual work</a></div><div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#ImageADO">Image ADO</a></div><div class="rel-row"><span class="rel-label">Exact match</span><a class="pill pill-ext" href="http://id.loc.gov/authorities/genreForms/gf2017027217" target="_blank" rel="noopener">http://id.loc.gov/authorities/genreForms/gf2017027217</a></div>
+  <details class="examples"><summary>Examples (3)</summary><ul><li>A Time of Resolve</li><li>Cushing Historical Image Collection</li><li>Raiford Stripling Collection</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/ArchitecturalDrawing">https://w3id.org/tamu/dc-types/ArchitecturalDrawing</a></div>
+</article>
+<article class="concept" id="VisualWork">
+  <h3>Visual work <span class="badge">Browse/Search Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">Digital surrogates of works of art, architecture, and any objects that occupy space, are perceived by the sense of sight, and are created or arranged, rather than naturally occurring. Of special interest are those objects conveying a symbolic or expressive meaning or an aesthetic experience, although visual works are not limited only to such works. Visual works generally exclude the intangible, however, designs for works never constructed may be included. Visual works include pictorial and sculptural works, as well as time-based works such as performance art. They also include utilitarian or ceremonial objects of the type collected or valued by museums, cultures, or individuals. Visual works do not include the performing arts.</p>
+  <aside class="scope-note">Visual Work (Other) includes all Image ADO type materials that do not fall into a more specific category.</aside>
+  <div class="rel-row"><span class="rel-label">Narrower</span><a class="pill" href="#Postcard">Postcard</a> <a class="pill" href="#Photograph">Photograph</a> <a class="pill" href="#DecoratedPaper">Decorated paper</a> <a class="pill" href="#BookJacket">Book jacket</a> <a class="pill" href="#ArchitecturalDrawing">Architectural drawing</a></div><div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#ImageADO">Image ADO</a></div><div class="rel-row"><span class="rel-label">Related match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300191086" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300191086</a></div>
+  <details class="examples"><summary>Examples (4)</summary><ul><li>Alice in Wonderland</li><li>A Time of Resolve</li><li>Cushing Historical Images Collection</li><li>Nicholas A. Basbanes - The Eternal Passion</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/VisualWork">https://w3id.org/tamu/dc-types/VisualWork</a></div>
+</article>
+<article class="concept" id="Interview">
+  <h3>Interview <span class="badge">Browse/Search Types</span></h3>
+  
+  <p class="definition">Statements, transcripts, or recordings of conversations in which one person obtains information from another such as for research purposes, publication, or broadcast.</p>
+  
+  <div class="rel-row"><span class="rel-label">Broader</span><a class="pill" href="#Audio">Audio</a> <a class="pill" href="#Video">Video</a> <a class="pill" href="#Document">Document</a></div><div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#StreamingVideoADO">StreamingVideo ADO</a> <a class="pill" href="#AudioObjectADO">AudioObject ADO</a> <a class="pill" href="#VideoObjectADO">VideoObject ADO</a> <a class="pill" href="#BookADO">Book ADO</a></div><div class="rel-row"><span class="rel-label">Exact match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300026392" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300026392</a> <a class="pill pill-ext" href="http://id.loc.gov/authorities/genreForms/gf2014026115" target="_blank" rel="noopener">http://id.loc.gov/authorities/genreForms/gf2014026115</a></div>
+  <details class="examples"><summary>Examples (11)</summary><ul><li>Audio Interviews from Nicholas Basbanes</li><li>Cherokee Freedmen</li><li>Chicano Movement and Mestizaje Ideology</li><li>Dallas Women&#x27;s Gallery</li><li>NASA Recordings</li><li>Los Palabristas</li><li>Nicholas A. Basbanes - Interviews</li><li>Nicholas A. Basbanes - The Eternal Passion</li><li>Oral Histories</li><li>Science Fiction Radio Show</li><li>Veterans of the Valley</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/Interview">https://w3id.org/tamu/dc-types/Interview</a></div>
+</article>
+<article class="concept" id="Music">
+  <h3>Music <span class="badge">Browse/Search Types</span></h3>
+  
+  <p class="definition">Performing arts genre having to do with the combining of vocal or instrumental sounds in measured time to communicate emotions, ideas, or states of mind, usually according to cultural standards of rhythm, melody, and, in most Western music, harmony.</p>
+  
+  <div class="rel-row"><span class="rel-label">Broader</span><a class="pill" href="#Video">Video</a> <a class="pill" href="#Audio">Audio</a></div><div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#StreamingVideoADO">StreamingVideo ADO</a></div><div class="rel-row"><span class="rel-label">Exact match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300054146" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300054146</a> <a class="pill pill-ext" href="https://id.loc.gov/authorities/genreForms/gf2014026952" target="_blank" rel="noopener">https://id.loc.gov/authorities/genreForms/gf2014026952</a></div>
+  <details class="examples"><summary>Examples (2)</summary><ul><li>Owens Folk Music</li><li>Music Activities Collection</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/Music">https://w3id.org/tamu/dc-types/Music</a></div>
+</article>
+<article class="concept" id="Audio">
+  <h3>Audio <span class="badge">Browse/Search Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">Discs, tapes, filaments, or other media on which sound has been recorded.</p>
+  
+  <div class="rel-row"><span class="rel-label">Narrower</span><a class="pill" href="#Interview">Interview</a> <a class="pill" href="#Music">Music</a></div><div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#AudioObjectADO">AudioObject ADO</a> <a class="pill" href="#StreamingVideoADO">StreamingVideo ADO</a></div><div class="rel-row"><span class="rel-label">Exact match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300028633" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300028633</a> <a class="pill pill-ext" href="http://id.loc.gov/authorities/genreForms/gf2011026594" target="_blank" rel="noopener">http://id.loc.gov/authorities/genreForms/gf2011026594</a></div>
+  <details class="examples"><summary>Examples (5)</summary><ul><li>Audio Interviews Nicholas Basbanes</li><li>NASA Recordings</li><li>Los Palabristas</li><li>Owens Folk Music</li><li>Texas A&amp;M Forest Service</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/Audio">https://w3id.org/tamu/dc-types/Audio</a></div>
+</article>
+<article class="concept" id="Video">
+  <h3>Video <span class="badge">Browse/Search Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">Manifestations of motion pictures, stored electronically, in any media or digitized format.</p>
+  
+  <div class="rel-row"><span class="rel-label">Narrower</span><a class="pill" href="#Interview">Interview</a> <a class="pill" href="#Music">Music</a></div><div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#VideoObjectADO">VideoObject ADO</a> <a class="pill" href="#StreamingVideoADO">StreamingVideo ADO</a></div><div class="rel-row"><span class="rel-label">Exact match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300028682" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300028682</a> <a class="pill pill-ext" href="http://id.loc.gov/authorities/genreForms/gf2011026723" target="_blank" rel="noopener">http://id.loc.gov/authorities/genreForms/gf2011026723</a></div>
+  <details class="examples"><summary>Examples (2)</summary><ul><li>NASA Recordings</li><li>University Libraries Events</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/Video">https://w3id.org/tamu/dc-types/Video</a></div>
+</article>
+<article class="concept" id="Compilation">
+  <h3>Compilation <span class="badge">Browse/Search Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">Arrangements, compositions, or constructions comprising a written work, art work, or other work, by arrangement of materials collected from various sources. It may refer to the arrangement of content only (as in a literary work), or of physical pieces.</p>
+  <aside class="scope-note">This is distinct from a collection because we want child items to be displayed in Mirador and we want to keep Compilations out of the Collections list.</aside>
+  <div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#CreativeWorkSeriesADO">CreativeWorkSeries ADO</a></div><div class="rel-row"><span class="rel-label">Exact match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300403969" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300403969</a></div>
+  <details class="examples"><summary>Examples (1)</summary><ul><li>Texas A&amp;M Building History Collection</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/Compilation">https://w3id.org/tamu/dc-types/Compilation</a></div>
+</article>
+<article class="concept" id="Container">
+  <h3>Container <span class="badge">Browse/Search Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">Digital surrogate of receptacles or formed or flexible coverings designed to hold, store, or ship objects or substances.</p>
+  
+  <div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#Box_FolderADO">Box_Folder ADO</a></div><div class="rel-row"><span class="rel-label">Related match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300197197" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300197197</a></div>
+  <details class="examples"><summary>Examples (1)</summary><ul><li>Cherokee Freedmen Collection</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/Container">https://w3id.org/tamu/dc-types/Container</a></div>
+</article>
+<article class="concept" id="Album">
+  <h3>Album <span class="badge">Browse/Search Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">Digital surrogate of books with blank pages used for assembling and presenting a collection, or any unpublished sets of pages that are bound or loose-leaf and have other materials affixed to them or writing or other images made on them. The volume may have been constructed with blank pages that were intended to have materials affixed, or it may have been assembled after having had materials affixed to separate pages.</p>
+  
+  <div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#AlbumADO">Album ADO</a></div><div class="rel-row"><span class="rel-label">Related match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300026690" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300026690</a> <a class="pill pill-ext" href="http://id.loc.gov/authorities/genreForms/gf2014026173" target="_blank" rel="noopener">http://id.loc.gov/authorities/genreForms/gf2014026173</a></div>
+  <details class="examples"><summary>Examples (2)</summary><ul><li>Nicholas A. Basbanes - The Eternal Passion</li><li>University Libraries Events</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/Album">https://w3id.org/tamu/dc-types/Album</a></div>
+</article>
+<article class="concept" id="WebArchive">
+  <h3>WebArchive <span class="badge">Browse/Search Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">Collections of preserved web pages.</p>
+  
+  <div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#WebArchiveADO">WebArchive ADO</a></div><div class="rel-row"><span class="rel-label">Exact match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300380353" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300380353</a> <a class="pill pill-ext" href="http://id.loc.gov/authorities/genreForms/gf2019026060" target="_blank" rel="noopener">http://id.loc.gov/authorities/genreForms/gf2019026060</a></div>
+  <details class="examples"><summary>Examples (1)</summary><ul><li>Web Archives</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/WebArchive">https://w3id.org/tamu/dc-types/WebArchive</a></div>
+</article>
+<article class="concept" id="Collection">
+  <h3>Collection <span class="badge">Browse/Search Types</span><span class="badge badge-top">Top concept</span></h3>
+  
+  <p class="definition">Accumulated groups of objects or materials having a focal characteristic and that have been brought together by an individual or organization. A collection comprises multiple items that are conceptually or physically arranged together for the purpose of cataloging or retrieval. A collection differs from an archival group because the items in a collection are bound informally for convenience and do not necessarily share a common provenance or otherwise meet the criteria for an archival group. Collection-level cataloging is appropriate for materials that share one or more common characteristics that make it useful for them to be clustered together. Individual items in a collection may be cataloged separately and linked to the collection. Examples of collections include a selected set of art works in a museum or archive, or separate literary works that do not form a treatise or monograph on a subject but have been combined and issued together as a whole.</p>
+  
+  <div class="rel-row"><span class="rel-label">Related</span><a class="pill" href="#CollectionADO">Collection ADO</a></div><div class="rel-row"><span class="rel-label">Exact match</span><a class="pill pill-ext" href="http://vocab.getty.edu/page/aat/300025976" target="_blank" rel="noopener">http://vocab.getty.edu/page/aat/300025976</a></div>
+  <details class="examples"><summary>Examples (1)</summary><ul><li>AMC Early Presidents</li></ul></details>
+  <div class="uri"><a href="https://w3id.org/tamu/dc-types/Collection">https://w3id.org/tamu/dc-types/Collection</a></div>
+</article>
+  </main>
+</div>
+<footer>
+  Generated from <code>source/*.yml</code> by <code>scripts/build_site.py</code>. Not an official publication
+  of record &mdash; verify against the source YAML before citing.
+</footer>
+</body>
+</html>

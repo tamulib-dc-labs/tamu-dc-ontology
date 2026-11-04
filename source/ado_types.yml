@@ -1,0 +1,129 @@
+---
+#------------------------------
+#   ADO Types
+#------------------------------
+
+profile:
+  date_modified: '2026-10-26'
+  version: 0.1
+
+types:
+  Image ADO:
+    type: skos:Concept
+    skos:prefLabel: Image ADO
+    skos:definition: "An digital object or digital object collection on Archipelago that depicts works of art, architecture, and any objects that occupy space, are perceived by the sense of sight, and are created or arranged, rather than naturally occurring. Of special interest are those objects conveying a symbolic or expressive meaning or an aesthetic experience, although visual works are not limited only to such works. Visual works generally exclude the intangible, however, designs for works never constructed may be included. Visual works include pictorial and sculptural works, as well as time-based works such as performance art. They also include utilitarian or ceremonial objects of the type collected or valued by museums, cultures, or individuals. Visual works do not include the performing arts.."
+    skos:relatedMatch: http://vocab.getty.edu/page/aat/300191086
+    skos:related: 
+      - Visual work
+      - Postcard
+      - Decorated paper
+      - Book jacket
+      - Architectural drawing
+  Map ADO:
+    type: skos:Concept
+    skos:prefLabel: Map ADO
+    skos:definition: "An digital object or digital object collection on Archipelago that depicts graphic or photogrammetric representations of the Earth's surface or a part of it, including physical features and political boundaries, where each point corresponds to a geographical or celestial position according to a definite scale or projection."
+    skos:relatedMatch: 
+      - http://vocab.getty.edu/page/aat/300028094
+      - http://id.loc.gov/authorities/genreForms/gf2011026387
+    skos:related: Map
+  Book ADO:
+    type: skos:Concept
+    skos:prefLabel: Book ADO
+    skos:definition: "An digital object or digital object collection on Archipelago that requires OCR."
+    skos:related:
+      - Book
+      - Issue
+      - Article
+      - Report
+      - Interview
+      - Correspondence
+      - Document
+  Page ADO:
+    type: skos:Concept
+    skos:prefLabel: Page ADO
+    skos:definition: "A digital object on Archipelago that requires OCR and ispartof a Book ADO."
+  Manuscript ADO:
+    type: skos:Concept
+    skos:prefLabel: Manuscript ADO
+    skos:definition: "An digital object or digital object collection on Archipelago that requires a place to store HTR."
+    skos:related:
+      - Book
+      - Correspondence
+      - Document
+  Leaf ADO:
+    type: skos:Concept
+    skos:prefLabel: Leaf ADO
+    skos:definition: "An digital object on Archipelago that requires a place to store HTR and ispartof a Manuscript ADO."
+  AudioObject ADO:
+    type: skos:Concept
+    skos:prefLabel: AudioObject ADO
+    skos:definition: "A digital object or digital object collection hosted on Archipelago that includes a digital surrogate for discs, tapes, filaments, or other media on which sound has been recorded."
+    skos:related:
+      - Interview
+      - Music
+      - Audio
+    skos:exactMatch: 
+      - http://vocab.getty.edu/page/aat/300028633
+      - http://id.loc.gov/authorities/genreForms/gf2011026594
+  VideoObject ADO:
+    type: skos:Concept
+    skos:prefLabel: VideoObject ADO
+    skos:definition: "A digital object or digital object collection hosted on Archipelago that includes manifestations of motion pictures, stored electronically, in any media or digitized format."
+    skos:related:
+      - Interview
+      - Music
+      - Video
+    skos:exactMatch:
+      - http://vocab.getty.edu/page/aat/300028682
+      - http://id.loc.gov/authorities/genreForms/gf2011026723
+  StreamingVideo ADO:
+    type: skos:Concept
+    skos:prefLabel: StreamingVideo ADO
+    skos:definition: "A digital object or digital object collection hosted on Avalon but streamed through Archipelago that includes digital surrogate for discs, tapes, filaments, or other media on which sound has been recorded and/or manifestations of motion pictures, stored electronically, in any media or digitized format."
+    skos:related:
+      - Interview
+      - Music
+      - Audio
+      - Video
+    skos:relatedMatch:
+      - http://vocab.getty.edu/page/aat/300028682
+      - http://id.loc.gov/authorities/genreForms/gf2011026723
+      - http://vocab.getty.edu/page/aat/300028633
+      - http://id.loc.gov/authorities/genreForms/gf2011026594
+  WebArchive ADO:
+    type: skos:Concept
+    skos:prefLabel: WebArchive ADO
+    skos:definition: "A digital object on Archipelago containing collections of preserved web pages."
+    skos:exactMatch: 
+      - http://vocab.getty.edu/page/aat/300380353
+      - http://id.loc.gov/authorities/genreForms/gf2019026060
+    skos:related: WebArchive
+  Collection ADO:
+    type: skos:Concept
+    skos:prefLabel: Collection ADO
+    skos:definition: "A digital object collection on Archipelago of objects or materials having a focal characteristic and that have been brought together by an individual or organization. A collection comprises multiple items that are conceptually or physically arranged together for the purpose of cataloging or retrieval. A collection differs from an archival group because the items in a collection are bound informally for convenience and do not necessarily share a common provenance or otherwise meet the criteria for an archival group. Collection-level cataloging is appropriate for materials that share one or more common characteristics that make it useful for them to be clustered together. Individual items in a collection may be cataloged separately and linked to the collection. Examples of collections include a selected set of art works in a museum or archive, or separate literary works that do not form a treatise or monograph on a subject but have been combined and issued together as a whole."
+    skos:exactMatch: http://vocab.getty.edu/page/aat/300025976
+    skos:related: Collection
+  CreativeWorkSeries ADO:
+    type: skos:Concept
+    skos:prefLabel: CreativeWorkSeries ADO
+    skos:definition: "A digital object collection on Archipelago containing arrangements, compositions, or constructions comprising a written work, art work, or other work, by arrangement of materials collected from various sources. It may refer to the arrangement of content only (as in a literary work), or of physical pieces."
+    skos:exactMatch: http://vocab.getty.edu/page/aat/300403969
+    skos:related: Compilation
+  Box_Folder ADO:
+    type: skos:Concept
+    skos:prefLabel: Box_Folder ADO
+    skos:definition: "A digital object collection on Archipelago representing receptacles or formed or flexible coverings designed to hold, store, or ship objects or substances."
+    skos:relatedMatch: http://vocab.getty.edu/page/aat/300197197
+    skos:related: Container
+  Album ADO:
+    type: skos:Concept
+    skos:prefLabel: Album ADO
+    skos:definition: "A digital object collection on Archipelago representing books with blank pages used for assembling and presenting a collection, or any unpublished sets of pages that are bound or loose-leaf and have other materials affixed to them or writing or other images made on them. The volume may have been constructed with blank pages that were intended to have materials affixed, or it may have been assembled after having had materials affixed to separate pages."
+    skos:relatedMatch: 
+      - http://vocab.getty.edu/page/aat/300026690
+      - http://id.loc.gov/authorities/genreForms/gf2014026173
+    skos:related: Album
+
+

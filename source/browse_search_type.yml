@@ -1,0 +1,322 @@
+---
+#------------------------------
+#   Browse and Search Types
+#------------------------------
+
+profile:
+  date_modified: '2026-10-22'
+  version: 0.1
+
+types:
+  Postcard:
+    type: skos:Concept
+    skos:prefLabel: Postcard
+    skos:definition: "Digital surrogate of cards on which a message may be written or printed for mailing without an envelope, usually at a lower rate than that for letters in envelopes."
+    skos:relatedMatch: 
+      - http://vocab.getty.edu/page/aat/300026816
+      - http://id.loc.gov/authorities/genreForms/gf2014026151
+    skos:broader: Visual work
+    skos:related:
+      - Book ADO
+      - Image ADO
+    skos:example: 
+      - World War I Postcards
+      - Bryan 150th
+  Correspondence:
+    type: skos:Concept
+    skos:prefLabel: Correspondence
+    skos:definition: "Any forms of addressed and written communication sent and received, including letters, postcards, memorandums, notes, telegrams, or cables."
+    skos:exactMatch: 
+      - http://vocab.getty.edu/page/aat/300026877
+      - http://id.loc.gov/authorities/genreForms/gf2025026080
+    skos:broader: Document
+    skos:related: 
+      - Book ADO
+      - Manuscript ADO
+    skos:example: 
+      - AMC Early Presidents
+      - Cherokee Freedmen
+      - Nicholas A. Basbanes - The Eternal Passion
+  Issue:
+    type: skos:Concept
+    skos:prefLabel: Issue
+    skos:definition: "A single issue from a publication in any medium issued in successive parts bearing numerical or chronological designations and intended to be continued indefinitely, such as periodicals, newspapers, annuals (reports, yearbooks, etc.), journals, memoires, proceedings, transactions, etc., of societies and numbered monographic series."
+    skos:relatedMatch: 
+      - http://vocab.getty.edu/page/aat/300026642
+      - http://id.loc.gov/authorities/genreForms/gf2014026174
+    skos:broader: Document
+    skos:related: 
+      - Book ADO
+      - Journal ADO
+    skos:example: 
+      - AMC Yell Books
+      - Committee on South Asian Women Bulletin
+      - Geographic Atlas of the United States
+      - Rancher's Roundup
+      - Texas A&M Athletic Programs - Football
+      - Texas A&M Yearbooks
+      - University Catalogs
+  Book:
+    type: skos:Concept
+    skos:prefLabel: Book
+    skos:altLabel: Monograph
+    skos:definition: "Separate treatises on a particular subject, typically written expositions of a subject narrow enough in scope to exclude all but a single aspect of the subject, for example, a study of the works of a single artist. In book cataloging, non-serial bibliographic items complete in one part or in a finite number of separate parts."
+    skos:exactMatch: http://vocab.getty.edu/page/aat/300060417
+    skos:broader: Document
+    skos:related: 
+      - Book ADO
+      - Manuscript ADO
+    skos:example: 
+      - AMC Early Presidents
+      - Bibliography of Science Fiction
+      - Cushing Exhibit Catalogs
+      - La Linda Poblana
+      - Minutes of Houston Oil Company
+      - Nicholas A. Basbanes - The Eternal Passion
+      - Primeros Libros
+      - William Fairfax Gray Diary
+  Article:
+    type: skos:Concept
+    skos:prefLabel: Article
+    skos:definition: "Literary compositions prepared for publication as an independent portion of a magazine, newspaper, encyclopedia, or other work."
+    skos:exactMatch: http://vocab.getty.edu/page/aat/300048715
+    skos:broader: Document
+    skos:related: Book ADO
+    skos:example: Rancher's Roundup
+  Report:
+    type: skos:Concept
+    skos:prefLabel: Report
+    skos:definition: "Official or formal records of a special investigation, in the form of documents containing presentations of facts, proceedings, investigations, or events."
+    skos:exactMatch: http://vocab.getty.edu/page/aat/300027267
+    skos:broader: Document
+    skos:related: Book ADO
+    skos:example: Frederick Cuny/INTERTECT
+  Document:
+    type: skos:Concept
+    skos:prefLabel: Document
+    skos:definition: "Physical or digital representations of a body of information designed with the capacity to communicate."
+    skos:exactMatch: http://vocab.getty.edu/page/aat/300026030
+    skos:narrower: 
+      - Correspondence
+      - Issue
+      - Book
+      - Article
+      - Report
+      - Interview
+    skos:related: 
+      - Book ADO
+      - Manuscript ADO
+    skos:example: 
+      - A Time of Resolve
+      - AMC Early Presidents
+      - Charting Texas
+      - Cherokee Freedmen
+      - Cushing Historical Images Collection
+      - Nicholas A. Basbanes - The Eternal Passion
+      - Selected Works from University Archives
+    skos:note: "Document includes all typed or handwritten text (Book and Manuscript ADO types) that does not fall into a more specific category."
+  Map:
+    type: skos:Map
+    skos:prefLabel: Map
+    skos:definition: "Digital surrogate of graphic or photogrammetric representations of the Earth's surface or a part of it, including physical features and political boundaries, where each point corresponds to a geographical or celestial position according to a definite scale or projection"
+    skos:relatedMatch: 
+      - http://vocab.getty.edu/page/aat/300028094
+      - http://id.loc.gov/authorities/genreForms/gf2011026387
+    skos:related: Map ADO
+    skos:example: 
+      - A Time of Resolve
+      - Charting Texas
+      - Cushing Historical Images Collection
+      - Historic Maps of Cuba
+      - Maps of Brazos County
+      - Stephen F. Austin 1830 Map of Texas
+      - Stephen Powys Marks London
+      - Woellhof Maps
+      - World War II Service Maps
+  Photograph:
+    type: skos:Concept
+    skos:prefLabel: Photograph
+    skos:definition: "Digital surrogates of still images produced from radiation-sensitive materials (sensitive to light, electron beams, or nuclear radiation), generally by means of the chemical action of light on a sensitive film, paper, glass, or metal. Photographs may be positive or negative, opaque or transparent."
+    skos:relatedMatch: http://vocab.getty.edu/page/aat/300046300
+    skos:exactMatch: http://id.loc.gov/authorities/genreForms/gf2017027249
+    skos:broader: Visual Work
+    skos:related: Image ADO
+    skos:example: 
+      - Bryan 150th
+      - A Time of Resolve
+      - AMC Early Presidents
+      - College of Medicine Class Photographs
+      - College of Veterinary Medicine Images
+      - Cushing Historical Images Collection
+      - Nicholas A. Basbanes - The Eternal Passion
+      - Selected Works from University Archives
+      - Texas A&M Building history
+      - Toward a Better Living
+      - University Libraries Events
+      - Wheelan
+  Decorated paper:
+    type: skos:Concept
+    skos:prefLabel: Decorated paper
+    skos:definition: "Digital surrogates of paper decorated by various means, which might include marbling, stencilling, dyeing, or block printing; to be used for endpapers, wallpaper, wrapping objects, or as a ground for printing or calligraphy."
+    skos:relatedMatch: http://vocab.getty.edu/page/aat/300265580
+    skos:broader: Visual work
+    skos:related: Image ADO
+    skos:example: Berger-Cloonan
+  Book jacket:
+    type: skos:Concept
+    skos:prefLabel: Book jacket
+    skos:definition: "Digital surrogates of detachable, flexible coverings for books, usually of paper cut flush with the covers, folding around the binding with the ends tucked in between the cover boards and the free end paper. For attached outer sheets or boards, use 'covers (gathered matter components).'"
+    skos:relatedMatch: http://vocab.getty.edu/page/aat/300195133
+    skos:broader: Visual work
+    skos:related: Image ADO
+    skos:example: Live to Build a Better World
+  skos:Concept:
+    skos:prefLabel: Architectural drawing
+    skos:definition: "Drawings of architecture and drawings for architectural projects, whether the project was executed or not. The term may also refer to any image in a two-dimensional medium that serves this same purpose, including prints and computer images."
+    skos:exactMatch: http://vocab.getty.edu/page/aat/300034787
+    skos:exactMatch: http://id.loc.gov/authorities/genreForms/gf2017027217
+    skos:broader: Visual work
+    skos:related: Image ADO
+    skos:example: 
+      - A Time of Resolve
+      - Cushing Historical Image Collection
+      - Raiford Stripling Collection
+  Visual work:
+    type: skos:Concept
+    skos:prefLabel: Visual work
+    skos:definition: "Digital surrogates of works of art, architecture, and any objects that occupy space, are perceived by the sense of sight, and are created or arranged, rather than naturally occurring. Of special interest are those objects conveying a symbolic or expressive meaning or an aesthetic experience, although visual works are not limited only to such works. Visual works generally exclude the intangible, however, designs for works never constructed may be included. Visual works include pictorial and sculptural works, as well as time-based works such as performance art. They also include utilitarian or ceremonial objects of the type collected or valued by museums, cultures, or individuals. Visual works do not include the performing arts."
+    skos:relatedMatch: http://vocab.getty.edu/page/aat/300191086
+    skos:narrower: 
+      - Postcard
+      - Photograph
+      - Decorated paper
+      - Book jacket
+      - Architectural drawing
+    skos:related: Image ADO
+    skos:example: 
+      - Alice in Wonderland
+      - A Time of Resolve
+      - Cushing Historical Images Collection
+      - Nicholas A. Basbanes - The Eternal Passion
+    skos:note: "Visual Work (Other) includes all Image ADO type materials that do not fall into a more specific category."
+  Interview:
+    type: skos:Concept
+    skos:prefLabel: Interview
+    skos:definition: "Statements, transcripts, or recordings of conversations in which one person obtains information from another such as for research purposes, publication, or broadcast."
+    skos:exactMatch: 
+      - http://vocab.getty.edu/page/aat/300026392
+      - http://id.loc.gov/authorities/genreForms/gf2014026115
+    skos:broader: 
+      - Audio
+      - Video
+      - Document
+    skos:related: 
+      - StreamingVideo ADO
+      - AudioObject ADO
+      - VideoObject ADO
+      - Book ADO
+    skos:example: 
+      - Audio Interviews from Nicholas Basbanes
+      - Cherokee Freedmen
+      - Chicano Movement and Mestizaje Ideology
+      - Dallas Women's Gallery
+      - NASA Recordings
+      - Los Palabristas
+      - Nicholas A. Basbanes - Interviews
+      - Nicholas A. Basbanes - The Eternal Passion
+      - Oral Histories
+      - Science Fiction Radio Show
+      - Veterans of the Valley
+  Music:
+    type: skos:Concept
+    skos:prefLabel: Music
+    skos:definition: "Performing arts genre having to do with the combining of vocal or instrumental sounds in measured time to communicate emotions, ideas, or states of mind, usually according to cultural standards of rhythm, melody, and, in most Western music, harmony."
+    skos:exactMatch: 
+      - http://vocab.getty.edu/page/aat/300054146
+      - https://id.loc.gov/authorities/genreForms/gf2014026952
+    skos:broader: 
+      - Video
+      - Audio
+    skos:related: StreamingVideo ADO
+    skos:example: 
+      - Owens Folk Music
+      - Music Activities Collection
+  Audio:
+    type: skos:Concept
+    skos:prefLabel: Audio
+    skos:definition: "Discs, tapes, filaments, or other media on which sound has been recorded."
+    skos:exactMatch: 
+      - http://vocab.getty.edu/page/aat/300028633
+      - http://id.loc.gov/authorities/genreForms/gf2011026594
+    skos:narrower: 
+      - Interview
+      - Music
+    skos:related: 
+      - AudioObject ADO
+      - StreamingVideo ADO
+    skos:example: 
+      - Audio Interviews Nicholas Basbanes
+      - NASA Recordings
+      - Los Palabristas
+      - Owens Folk Music
+      - Texas A&M Forest Service
+  Video:
+    type: skos:Concept   
+    skos:prefLabel: Video
+    skos:definition: "Manifestations of motion pictures, stored electronically, in any media or digitized format."
+    skos:exactMatch:
+      - http://vocab.getty.edu/page/aat/300028682
+      - http://id.loc.gov/authorities/genreForms/gf2011026723
+    skos:narrower: 
+      - Interview
+      - Music
+    skos:related: 
+      - VideoObject ADO
+      - StreamingVideo ADO
+    skos:example: 
+      - NASA Recordings
+      - University Libraries Events
+  Compilation:
+    type: skos:Concept
+    skos:prefLabel: Compilation
+    skos:definition: "Arrangements, compositions, or constructions comprising a written work, art work, or other work, by arrangement of materials collected from various sources. It may refer to the arrangement of content only (as in a literary work), or of physical pieces."
+    skos:exactMatch: http://vocab.getty.edu/page/aat/300403969
+    skos:related: 
+      - CreativeWorkSeries ADO
+    skos:example: Texas A&M Building History Collection
+    skos:note: "This is distinct from a collection because we want child items to be displayed in Mirador and we want to keep Compilations out of the Collections list."
+  Container:
+    type: skos:Concept
+    skos:prefLabel: Container
+    skos:definition: "Digital surrogate of receptacles or formed or flexible coverings designed to hold, store, or ship objects or substances."
+    skos:relatedMatch: http://vocab.getty.edu/page/aat/300197197
+    skos:related: 
+      - Box_Folder ADO
+    skos:example: Cherokee Freedmen Collection
+  Album:
+    type: skos:Concept
+    skos:prefLabel: Album
+    skos:definition: "Digital surrogate of books with blank pages used for assembling and presenting a collection, or any unpublished sets of pages that are bound or loose-leaf and have other materials affixed to them or writing or other images made on them. The volume may have been constructed with blank pages that were intended to have materials affixed, or it may have been assembled after having had materials affixed to separate pages."
+    skos:relatedMatch: 
+      - http://vocab.getty.edu/page/aat/300026690
+      - http://id.loc.gov/authorities/genreForms/gf2014026173
+    skos:related: Album ADO
+    skos:example: 
+      - Nicholas A. Basbanes - The Eternal Passion
+      - University Libraries Events
+  WebArchive:
+    type: skos:Concept
+    skos:prefLabel: WebArchive
+    skos:definition: "Collections of preserved web pages."
+    skos:exactMatch: 
+      - http://vocab.getty.edu/page/aat/300380353
+      - http://id.loc.gov/authorities/genreForms/gf2019026060
+    skos:related: WebArchive ADO
+    skos:example: Web Archives
+  Collection:
+    type: skos:Concept
+    skos:prefLabel: Collection
+    skos:definition: "Accumulated groups of objects or materials having a focal characteristic and that have been brought together by an individual or organization. A collection comprises multiple items that are conceptually or physically arranged together for the purpose of cataloging or retrieval. A collection differs from an archival group because the items in a collection are bound informally for convenience and do not necessarily share a common provenance or otherwise meet the criteria for an archival group. Collection-level cataloging is appropriate for materials that share one or more common characteristics that make it useful for them to be clustered together. Individual items in a collection may be cataloged separately and linked to the collection. Examples of collections include a selected set of art works in a museum or archive, or separate literary works that do not form a treatise or monograph on a subject but have been combined and issued together as a whole."
+    skos:exactMatch: http://vocab.getty.edu/page/aat/300025976
+    skos:related: Collection ADO
+    skos:example: AMC Early Presidents
