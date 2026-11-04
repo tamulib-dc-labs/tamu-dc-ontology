@@ -43,6 +43,13 @@ types:
     type: skos:Concept
     skos:prefLabel: Page ADO
     skos:definition: "A digital object on Archipelago that requires OCR and ispartof a Book ADO."
+  Journal ADO:
+    type: skos:Concept
+    skos:prefLabel: Journal ADO
+    skos:definition: "A digital object collection on Archipelago that requires OCR and may consist of Book ADOs."
+    skos:related:
+      - Book
+      - Issue
   Manuscript ADO:
     type: skos:Concept
     skos:prefLabel: Manuscript ADO

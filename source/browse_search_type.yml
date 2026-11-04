@@ -170,7 +170,8 @@ types:
     skos:broader: Visual work
     skos:related: Image ADO
     skos:example: Live to Build a Better World
-  skos:Concept:
+  Architectural drawing:
+    type: skos:Concept
     skos:prefLabel: Architectural drawing
     skos:definition: "Drawings of architecture and drawings for architectural projects, whether the project was executed or not. The term may also refer to any image in a two-dimensional medium that serves this same purpose, including prints and computer images."
     skos:exactMatch: http://vocab.getty.edu/page/aat/300034787
