@@ -10,9 +10,21 @@ Run with:  python3 scripts/build_site.py
 Requires:  pyyaml, rdflib
 """
 import html
+import os
 import re
 import sys
 from pathlib import Path
+
+if os.environ.get("PYTHONHASHSEED") != "0":
+    # rdflib's pretty-xml serializer orders elements using Python's string
+    # hashing internally (via dict/set iteration order), which is randomized
+    # per-process by default. Without a fixed hash seed, re-running this
+    # script produces a byte-different but semantically identical .rdf file
+    # on every invocation, which defeats the CI drift check. Re-exec once
+    # with a fixed seed so output is reproducible regardless of how this
+    # script is invoked.
+    os.environ["PYTHONHASHSEED"] = "0"
+    os.execv(sys.executable, [sys.executable] + sys.argv)
 
 import yaml
 from rdflib import Graph, Namespace, URIRef, Literal

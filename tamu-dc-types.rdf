@@ -4,7 +4,7 @@
   xmlns:dcterms="http://purl.org/dc/terms/"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 >
-  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/PageADO">
+  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Map">
     <skos:inScheme>
       <skos:ConceptScheme rdf:about="https://w3id.org/tamu/dc-types/">
         <skos:prefLabel xml:lang="en">TAMU Digital Collections Types Vocabulary</skos:prefLabel>
@@ -37,18 +37,230 @@
         <skos:hasTopConcept rdf:resource="https://w3id.org/tamu/dc-types/Collection"/>
       </skos:ConceptScheme>
     </skos:inScheme>
-    <skos:prefLabel xml:lang="en">Page ADO</skos:prefLabel>
-    <dcterms:source xml:lang="en">ADO Types</dcterms:source>
-    <skos:definition xml:lang="en">A digital object on Archipelago that requires OCR and ispartof a Book ADO.</skos:definition>
+    <skos:prefLabel xml:lang="en">Map</skos:prefLabel>
+    <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
+    <skos:definition xml:lang="en">Digital surrogate of graphic or photogrammetric representations of the Earth's surface or a part of it, including physical features and political boundaries, where each point corresponds to a geographical or celestial position according to a definite scale or projection</skos:definition>
+    <skos:example>A Time of Resolve</skos:example>
+    <skos:example>Charting Texas</skos:example>
+    <skos:example>Cushing Historical Images Collection</skos:example>
+    <skos:example>Historic Maps of Cuba</skos:example>
+    <skos:example>Maps of Brazos County</skos:example>
+    <skos:example>Stephen F. Austin 1830 Map of Texas</skos:example>
+    <skos:example>Stephen Powys Marks London</skos:example>
+    <skos:example>Woellhof Maps</skos:example>
+    <skos:example>World War II Service Maps</skos:example>
+    <skos:relatedMatch rdf:resource="http://vocab.getty.edu/page/aat/300028094"/>
+    <skos:relatedMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2011026387"/>
+    <skos:related>
+      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/MapADO">
+        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+        <skos:prefLabel xml:lang="en">Map ADO</skos:prefLabel>
+        <dcterms:source xml:lang="en">ADO Types</dcterms:source>
+        <skos:definition xml:lang="en">An digital object or digital object collection on Archipelago that depicts graphic or photogrammetric representations of the Earth's surface or a part of it, including physical features and political boundaries, where each point corresponds to a geographical or celestial position according to a definite scale or projection.</skos:definition>
+        <skos:relatedMatch rdf:resource="http://vocab.getty.edu/page/aat/300028094"/>
+        <skos:relatedMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2011026387"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Map"/>
+        <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
+      </skos:Concept>
+    </skos:related>
     <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
   </skos:Concept>
-  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/DecoratedPaper">
+  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Compilation">
     <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-    <skos:prefLabel xml:lang="en">Decorated paper</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Compilation</skos:prefLabel>
     <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
-    <skos:definition xml:lang="en">Digital surrogates of paper decorated by various means, which might include marbling, stencilling, dyeing, or block printing; to be used for endpapers, wallpaper, wrapping objects, or as a ground for printing or calligraphy.</skos:definition>
-    <skos:example>Berger-Cloonan</skos:example>
-    <skos:relatedMatch rdf:resource="http://vocab.getty.edu/page/aat/300265580"/>
+    <skos:definition xml:lang="en">Arrangements, compositions, or constructions comprising a written work, art work, or other work, by arrangement of materials collected from various sources. It may refer to the arrangement of content only (as in a literary work), or of physical pieces.</skos:definition>
+    <skos:scopeNote xml:lang="en">This is distinct from a collection because we want child items to be displayed in Mirador and we want to keep Compilations out of the Collections list.</skos:scopeNote>
+    <skos:example>Texas A&amp;M Building History Collection</skos:example>
+    <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300403969"/>
+    <skos:related>
+      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/CreativeWorkSeriesADO">
+        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+        <skos:prefLabel xml:lang="en">CreativeWorkSeries ADO</skos:prefLabel>
+        <dcterms:source xml:lang="en">ADO Types</dcterms:source>
+        <skos:definition xml:lang="en">A digital object collection on Archipelago containing arrangements, compositions, or constructions comprising a written work, art work, or other work, by arrangement of materials collected from various sources. It may refer to the arrangement of content only (as in a literary work), or of physical pieces.</skos:definition>
+        <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300403969"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Compilation"/>
+        <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
+      </skos:Concept>
+    </skos:related>
+    <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/WebArchiveADO">
+    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+    <skos:prefLabel xml:lang="en">WebArchive ADO</skos:prefLabel>
+    <dcterms:source xml:lang="en">ADO Types</dcterms:source>
+    <skos:definition xml:lang="en">A digital object on Archipelago containing collections of preserved web pages.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300380353"/>
+    <skos:exactMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2019026060"/>
+    <skos:related>
+      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/WebArchive">
+        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+        <skos:prefLabel xml:lang="en">WebArchive</skos:prefLabel>
+        <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
+        <skos:definition xml:lang="en">Collections of preserved web pages.</skos:definition>
+        <skos:example>Web Archives</skos:example>
+        <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300380353"/>
+        <skos:exactMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2019026060"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/WebArchiveADO"/>
+        <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
+      </skos:Concept>
+    </skos:related>
+    <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Correspondence">
+    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+    <skos:prefLabel xml:lang="en">Correspondence</skos:prefLabel>
+    <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
+    <skos:definition xml:lang="en">Any forms of addressed and written communication sent and received, including letters, postcards, memorandums, notes, telegrams, or cables.</skos:definition>
+    <skos:example>AMC Early Presidents</skos:example>
+    <skos:example>Cherokee Freedmen</skos:example>
+    <skos:example>Nicholas A. Basbanes - The Eternal Passion</skos:example>
+    <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300026877"/>
+    <skos:exactMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2025026080"/>
+    <skos:broader>
+      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Document">
+        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+        <skos:prefLabel xml:lang="en">Document</skos:prefLabel>
+        <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
+        <skos:definition xml:lang="en">Physical or digital representations of a body of information designed with the capacity to communicate.</skos:definition>
+        <skos:scopeNote xml:lang="en">Document includes all typed or handwritten text (Book and Manuscript ADO types) that does not fall into a more specific category.</skos:scopeNote>
+        <skos:example>A Time of Resolve</skos:example>
+        <skos:example>AMC Early Presidents</skos:example>
+        <skos:example>Charting Texas</skos:example>
+        <skos:example>Cherokee Freedmen</skos:example>
+        <skos:example>Cushing Historical Images Collection</skos:example>
+        <skos:example>Nicholas A. Basbanes - The Eternal Passion</skos:example>
+        <skos:example>Selected Works from University Archives</skos:example>
+        <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300026030"/>
+        <skos:narrower rdf:resource="https://w3id.org/tamu/dc-types/Correspondence"/>
+        <skos:narrower rdf:resource="https://w3id.org/tamu/dc-types/Issue"/>
+        <skos:narrower rdf:resource="https://w3id.org/tamu/dc-types/Book"/>
+        <skos:narrower rdf:resource="https://w3id.org/tamu/dc-types/Article"/>
+        <skos:narrower rdf:resource="https://w3id.org/tamu/dc-types/Report"/>
+        <skos:narrower rdf:resource="https://w3id.org/tamu/dc-types/Interview"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/BookADO"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/ManuscriptADO"/>
+        <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
+      </skos:Concept>
+    </skos:broader>
+    <skos:related>
+      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/BookADO">
+        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+        <skos:prefLabel xml:lang="en">Book ADO</skos:prefLabel>
+        <dcterms:source xml:lang="en">ADO Types</dcterms:source>
+        <skos:definition xml:lang="en">An digital object or digital object collection on Archipelago that requires OCR.</skos:definition>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Book"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Issue"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Article"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Report"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Interview"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Correspondence"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Document"/>
+        <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
+      </skos:Concept>
+    </skos:related>
+    <skos:related>
+      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/ManuscriptADO">
+        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+        <skos:prefLabel xml:lang="en">Manuscript ADO</skos:prefLabel>
+        <dcterms:source xml:lang="en">ADO Types</dcterms:source>
+        <skos:definition xml:lang="en">An digital object or digital object collection on Archipelago that requires a place to store HTR.</skos:definition>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Book"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Correspondence"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Document"/>
+        <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
+      </skos:Concept>
+    </skos:related>
+  </skos:Concept>
+  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/VideoObjectADO">
+    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+    <skos:prefLabel xml:lang="en">VideoObject ADO</skos:prefLabel>
+    <dcterms:source xml:lang="en">ADO Types</dcterms:source>
+    <skos:definition xml:lang="en">A digital object or digital object collection hosted on Archipelago that includes manifestations of motion pictures, stored electronically, in any media or digitized format.</skos:definition>
+    <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300028682"/>
+    <skos:exactMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2011026723"/>
+    <skos:related>
+      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Interview">
+        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+        <skos:prefLabel xml:lang="en">Interview</skos:prefLabel>
+        <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
+        <skos:definition xml:lang="en">Statements, transcripts, or recordings of conversations in which one person obtains information from another such as for research purposes, publication, or broadcast.</skos:definition>
+        <skos:example>Audio Interviews from Nicholas Basbanes</skos:example>
+        <skos:example>Cherokee Freedmen</skos:example>
+        <skos:example>Chicano Movement and Mestizaje Ideology</skos:example>
+        <skos:example>Dallas Women's Gallery</skos:example>
+        <skos:example>NASA Recordings</skos:example>
+        <skos:example>Los Palabristas</skos:example>
+        <skos:example>Nicholas A. Basbanes - Interviews</skos:example>
+        <skos:example>Nicholas A. Basbanes - The Eternal Passion</skos:example>
+        <skos:example>Oral Histories</skos:example>
+        <skos:example>Science Fiction Radio Show</skos:example>
+        <skos:example>Veterans of the Valley</skos:example>
+        <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300026392"/>
+        <skos:exactMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2014026115"/>
+        <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/Audio"/>
+        <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/Video"/>
+        <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/Document"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/StreamingVideoADO"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/AudioObjectADO"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/VideoObjectADO"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/BookADO"/>
+      </skos:Concept>
+    </skos:related>
+    <skos:related>
+      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Music">
+        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+        <skos:prefLabel xml:lang="en">Music</skos:prefLabel>
+        <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
+        <skos:definition xml:lang="en">Performing arts genre having to do with the combining of vocal or instrumental sounds in measured time to communicate emotions, ideas, or states of mind, usually according to cultural standards of rhythm, melody, and, in most Western music, harmony.</skos:definition>
+        <skos:example>Owens Folk Music</skos:example>
+        <skos:example>Music Activities Collection</skos:example>
+        <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300054146"/>
+        <skos:exactMatch rdf:resource="https://id.loc.gov/authorities/genreForms/gf2014026952"/>
+        <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/Video"/>
+        <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/Audio"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/StreamingVideoADO"/>
+      </skos:Concept>
+    </skos:related>
+    <skos:related>
+      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Video">
+        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+        <skos:prefLabel xml:lang="en">Video</skos:prefLabel>
+        <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
+        <skos:definition xml:lang="en">Manifestations of motion pictures, stored electronically, in any media or digitized format.</skos:definition>
+        <skos:example>NASA Recordings</skos:example>
+        <skos:example>University Libraries Events</skos:example>
+        <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300028682"/>
+        <skos:exactMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2011026723"/>
+        <skos:narrower rdf:resource="https://w3id.org/tamu/dc-types/Interview"/>
+        <skos:narrower rdf:resource="https://w3id.org/tamu/dc-types/Music"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/VideoObjectADO"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/StreamingVideoADO"/>
+        <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
+      </skos:Concept>
+    </skos:related>
+    <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Photograph">
+    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+    <skos:prefLabel xml:lang="en">Photograph</skos:prefLabel>
+    <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
+    <skos:definition xml:lang="en">Digital surrogates of still images produced from radiation-sensitive materials (sensitive to light, electron beams, or nuclear radiation), generally by means of the chemical action of light on a sensitive film, paper, glass, or metal. Photographs may be positive or negative, opaque or transparent.</skos:definition>
+    <skos:example>Bryan 150th</skos:example>
+    <skos:example>A Time of Resolve</skos:example>
+    <skos:example>AMC Early Presidents</skos:example>
+    <skos:example>College of Medicine Class Photographs</skos:example>
+    <skos:example>College of Veterinary Medicine Images</skos:example>
+    <skos:example>Cushing Historical Images Collection</skos:example>
+    <skos:example>Nicholas A. Basbanes - The Eternal Passion</skos:example>
+    <skos:example>Selected Works from University Archives</skos:example>
+    <skos:example>Texas A&amp;M Building history</skos:example>
+    <skos:example>Toward a Better Living</skos:example>
+    <skos:example>University Libraries Events</skos:example>
+    <skos:example>Wheelan</skos:example>
+    <skos:exactMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2017027249"/>
+    <skos:relatedMatch rdf:resource="http://vocab.getty.edu/page/aat/300046300"/>
     <skos:broader>
       <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/VisualWork">
         <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
@@ -86,264 +298,62 @@
       </skos:Concept>
     </skos:related>
   </skos:Concept>
-  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/BookADO">
+  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Book">
     <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-    <skos:prefLabel xml:lang="en">Book ADO</skos:prefLabel>
-    <dcterms:source xml:lang="en">ADO Types</dcterms:source>
-    <skos:definition xml:lang="en">An digital object or digital object collection on Archipelago that requires OCR.</skos:definition>
-    <skos:related>
-      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Book">
-        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-        <skos:prefLabel xml:lang="en">Book</skos:prefLabel>
-        <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
-        <skos:altLabel xml:lang="en">Monograph</skos:altLabel>
-        <skos:definition xml:lang="en">Separate treatises on a particular subject, typically written expositions of a subject narrow enough in scope to exclude all but a single aspect of the subject, for example, a study of the works of a single artist. In book cataloging, non-serial bibliographic items complete in one part or in a finite number of separate parts.</skos:definition>
-        <skos:example>AMC Early Presidents</skos:example>
-        <skos:example>Bibliography of Science Fiction</skos:example>
-        <skos:example>Cushing Exhibit Catalogs</skos:example>
-        <skos:example>La Linda Poblana</skos:example>
-        <skos:example>Minutes of Houston Oil Company</skos:example>
-        <skos:example>Nicholas A. Basbanes - The Eternal Passion</skos:example>
-        <skos:example>Primeros Libros</skos:example>
-        <skos:example>William Fairfax Gray Diary</skos:example>
-        <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300060417"/>
-        <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/Document"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/BookADO"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/ManuscriptADO"/>
-      </skos:Concept>
-    </skos:related>
-    <skos:related>
-      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Issue">
-        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-        <skos:prefLabel xml:lang="en">Issue</skos:prefLabel>
-        <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
-        <skos:definition xml:lang="en">A single issue from a publication in any medium issued in successive parts bearing numerical or chronological designations and intended to be continued indefinitely, such as periodicals, newspapers, annuals (reports, yearbooks, etc.), journals, memoires, proceedings, transactions, etc., of societies and numbered monographic series.</skos:definition>
-        <skos:example>AMC Yell Books</skos:example>
-        <skos:example>Committee on South Asian Women Bulletin</skos:example>
-        <skos:example>Geographic Atlas of the United States</skos:example>
-        <skos:example>Rancher's Roundup</skos:example>
-        <skos:example>Texas A&amp;M Athletic Programs - Football</skos:example>
-        <skos:example>Texas A&amp;M Yearbooks</skos:example>
-        <skos:example>University Catalogs</skos:example>
-        <skos:relatedMatch rdf:resource="http://vocab.getty.edu/page/aat/300026642"/>
-        <skos:relatedMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2014026174"/>
-        <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/Document"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/BookADO"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/JournalADO"/>
-      </skos:Concept>
-    </skos:related>
-    <skos:related>
-      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Article">
-        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-        <skos:prefLabel xml:lang="en">Article</skos:prefLabel>
-        <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
-        <skos:definition xml:lang="en">Literary compositions prepared for publication as an independent portion of a magazine, newspaper, encyclopedia, or other work.</skos:definition>
-        <skos:example>Rancher's Roundup</skos:example>
-        <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300048715"/>
-        <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/Document"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/BookADO"/>
-      </skos:Concept>
-    </skos:related>
-    <skos:related>
-      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Report">
-        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-        <skos:prefLabel xml:lang="en">Report</skos:prefLabel>
-        <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
-        <skos:definition xml:lang="en">Official or formal records of a special investigation, in the form of documents containing presentations of facts, proceedings, investigations, or events.</skos:definition>
-        <skos:example>Frederick Cuny/INTERTECT</skos:example>
-        <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300027267"/>
-        <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/Document"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/BookADO"/>
-      </skos:Concept>
-    </skos:related>
-    <skos:related>
-      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Interview">
-        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-        <skos:prefLabel xml:lang="en">Interview</skos:prefLabel>
-        <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
-        <skos:definition xml:lang="en">Statements, transcripts, or recordings of conversations in which one person obtains information from another such as for research purposes, publication, or broadcast.</skos:definition>
-        <skos:example>Audio Interviews from Nicholas Basbanes</skos:example>
-        <skos:example>Cherokee Freedmen</skos:example>
-        <skos:example>Chicano Movement and Mestizaje Ideology</skos:example>
-        <skos:example>Dallas Women's Gallery</skos:example>
-        <skos:example>NASA Recordings</skos:example>
-        <skos:example>Los Palabristas</skos:example>
-        <skos:example>Nicholas A. Basbanes - Interviews</skos:example>
-        <skos:example>Nicholas A. Basbanes - The Eternal Passion</skos:example>
-        <skos:example>Oral Histories</skos:example>
-        <skos:example>Science Fiction Radio Show</skos:example>
-        <skos:example>Veterans of the Valley</skos:example>
-        <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300026392"/>
-        <skos:exactMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2014026115"/>
-        <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/Audio"/>
-        <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/Video"/>
-        <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/Document"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/StreamingVideoADO"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/AudioObjectADO"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/VideoObjectADO"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/BookADO"/>
-      </skos:Concept>
-    </skos:related>
-    <skos:related>
-      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Correspondence">
-        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-        <skos:prefLabel xml:lang="en">Correspondence</skos:prefLabel>
-        <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
-        <skos:definition xml:lang="en">Any forms of addressed and written communication sent and received, including letters, postcards, memorandums, notes, telegrams, or cables.</skos:definition>
-        <skos:example>AMC Early Presidents</skos:example>
-        <skos:example>Cherokee Freedmen</skos:example>
-        <skos:example>Nicholas A. Basbanes - The Eternal Passion</skos:example>
-        <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300026877"/>
-        <skos:exactMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2025026080"/>
-        <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/Document"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/BookADO"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/ManuscriptADO"/>
-      </skos:Concept>
-    </skos:related>
-    <skos:related>
-      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Document">
-        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-        <skos:prefLabel xml:lang="en">Document</skos:prefLabel>
-        <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
-        <skos:definition xml:lang="en">Physical or digital representations of a body of information designed with the capacity to communicate.</skos:definition>
-        <skos:scopeNote xml:lang="en">Document includes all typed or handwritten text (Book and Manuscript ADO types) that does not fall into a more specific category.</skos:scopeNote>
-        <skos:example>A Time of Resolve</skos:example>
-        <skos:example>AMC Early Presidents</skos:example>
-        <skos:example>Charting Texas</skos:example>
-        <skos:example>Cherokee Freedmen</skos:example>
-        <skos:example>Cushing Historical Images Collection</skos:example>
-        <skos:example>Nicholas A. Basbanes - The Eternal Passion</skos:example>
-        <skos:example>Selected Works from University Archives</skos:example>
-        <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300026030"/>
-        <skos:narrower rdf:resource="https://w3id.org/tamu/dc-types/Correspondence"/>
-        <skos:narrower rdf:resource="https://w3id.org/tamu/dc-types/Issue"/>
-        <skos:narrower rdf:resource="https://w3id.org/tamu/dc-types/Book"/>
-        <skos:narrower rdf:resource="https://w3id.org/tamu/dc-types/Article"/>
-        <skos:narrower rdf:resource="https://w3id.org/tamu/dc-types/Report"/>
-        <skos:narrower rdf:resource="https://w3id.org/tamu/dc-types/Interview"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/BookADO"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/ManuscriptADO"/>
-        <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
-      </skos:Concept>
-    </skos:related>
-    <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
-  </skos:Concept>
-  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/CreativeWorkSeriesADO">
-    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-    <skos:prefLabel xml:lang="en">CreativeWorkSeries ADO</skos:prefLabel>
-    <dcterms:source xml:lang="en">ADO Types</dcterms:source>
-    <skos:definition xml:lang="en">A digital object collection on Archipelago containing arrangements, compositions, or constructions comprising a written work, art work, or other work, by arrangement of materials collected from various sources. It may refer to the arrangement of content only (as in a literary work), or of physical pieces.</skos:definition>
-    <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300403969"/>
-    <skos:related>
-      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Compilation">
-        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-        <skos:prefLabel xml:lang="en">Compilation</skos:prefLabel>
-        <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
-        <skos:definition xml:lang="en">Arrangements, compositions, or constructions comprising a written work, art work, or other work, by arrangement of materials collected from various sources. It may refer to the arrangement of content only (as in a literary work), or of physical pieces.</skos:definition>
-        <skos:scopeNote xml:lang="en">This is distinct from a collection because we want child items to be displayed in Mirador and we want to keep Compilations out of the Collections list.</skos:scopeNote>
-        <skos:example>Texas A&amp;M Building History Collection</skos:example>
-        <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300403969"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/CreativeWorkSeriesADO"/>
-        <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
-      </skos:Concept>
-    </skos:related>
-    <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
-  </skos:Concept>
-  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Music">
-    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-    <skos:prefLabel xml:lang="en">Music</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Book</skos:prefLabel>
     <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
-    <skos:definition xml:lang="en">Performing arts genre having to do with the combining of vocal or instrumental sounds in measured time to communicate emotions, ideas, or states of mind, usually according to cultural standards of rhythm, melody, and, in most Western music, harmony.</skos:definition>
-    <skos:example>Owens Folk Music</skos:example>
-    <skos:example>Music Activities Collection</skos:example>
-    <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300054146"/>
-    <skos:exactMatch rdf:resource="https://id.loc.gov/authorities/genreForms/gf2014026952"/>
-    <skos:broader>
-      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Video">
-        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-        <skos:prefLabel xml:lang="en">Video</skos:prefLabel>
-        <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
-        <skos:definition xml:lang="en">Manifestations of motion pictures, stored electronically, in any media or digitized format.</skos:definition>
-        <skos:example>NASA Recordings</skos:example>
-        <skos:example>University Libraries Events</skos:example>
-        <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300028682"/>
-        <skos:exactMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2011026723"/>
-        <skos:narrower rdf:resource="https://w3id.org/tamu/dc-types/Interview"/>
-        <skos:narrower rdf:resource="https://w3id.org/tamu/dc-types/Music"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/VideoObjectADO"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/StreamingVideoADO"/>
-        <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
-      </skos:Concept>
-    </skos:broader>
-    <skos:broader>
-      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Audio">
-        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-        <skos:prefLabel xml:lang="en">Audio</skos:prefLabel>
-        <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
-        <skos:definition xml:lang="en">Discs, tapes, filaments, or other media on which sound has been recorded.</skos:definition>
-        <skos:example>Audio Interviews Nicholas Basbanes</skos:example>
-        <skos:example>NASA Recordings</skos:example>
-        <skos:example>Los Palabristas</skos:example>
-        <skos:example>Owens Folk Music</skos:example>
-        <skos:example>Texas A&amp;M Forest Service</skos:example>
-        <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300028633"/>
-        <skos:exactMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2011026594"/>
-        <skos:narrower rdf:resource="https://w3id.org/tamu/dc-types/Interview"/>
-        <skos:narrower rdf:resource="https://w3id.org/tamu/dc-types/Music"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/AudioObjectADO"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/StreamingVideoADO"/>
-        <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
-      </skos:Concept>
-    </skos:broader>
-    <skos:related>
-      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/StreamingVideoADO">
-        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-        <skos:prefLabel xml:lang="en">StreamingVideo ADO</skos:prefLabel>
-        <dcterms:source xml:lang="en">ADO Types</dcterms:source>
-        <skos:definition xml:lang="en">A digital object or digital object collection hosted on Avalon but streamed through Archipelago that includes digital surrogate for discs, tapes, filaments, or other media on which sound has been recorded and/or manifestations of motion pictures, stored electronically, in any media or digitized format.</skos:definition>
-        <skos:relatedMatch rdf:resource="http://vocab.getty.edu/page/aat/300028682"/>
-        <skos:relatedMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2011026723"/>
-        <skos:relatedMatch rdf:resource="http://vocab.getty.edu/page/aat/300028633"/>
-        <skos:relatedMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2011026594"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Interview"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Music"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Audio"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Video"/>
-        <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
-      </skos:Concept>
-    </skos:related>
-  </skos:Concept>
-  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/VideoObjectADO">
-    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-    <skos:prefLabel xml:lang="en">VideoObject ADO</skos:prefLabel>
-    <dcterms:source xml:lang="en">ADO Types</dcterms:source>
-    <skos:definition xml:lang="en">A digital object or digital object collection hosted on Archipelago that includes manifestations of motion pictures, stored electronically, in any media or digitized format.</skos:definition>
-    <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300028682"/>
-    <skos:exactMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2011026723"/>
-    <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Interview"/>
-    <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Music"/>
-    <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Video"/>
-    <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
-  </skos:Concept>
-  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Collection">
-    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-    <skos:prefLabel xml:lang="en">Collection</skos:prefLabel>
-    <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
-    <skos:definition xml:lang="en">Accumulated groups of objects or materials having a focal characteristic and that have been brought together by an individual or organization. A collection comprises multiple items that are conceptually or physically arranged together for the purpose of cataloging or retrieval. A collection differs from an archival group because the items in a collection are bound informally for convenience and do not necessarily share a common provenance or otherwise meet the criteria for an archival group. Collection-level cataloging is appropriate for materials that share one or more common characteristics that make it useful for them to be clustered together. Individual items in a collection may be cataloged separately and linked to the collection. Examples of collections include a selected set of art works in a museum or archive, or separate literary works that do not form a treatise or monograph on a subject but have been combined and issued together as a whole.</skos:definition>
+    <skos:altLabel xml:lang="en">Monograph</skos:altLabel>
+    <skos:definition xml:lang="en">Separate treatises on a particular subject, typically written expositions of a subject narrow enough in scope to exclude all but a single aspect of the subject, for example, a study of the works of a single artist. In book cataloging, non-serial bibliographic items complete in one part or in a finite number of separate parts.</skos:definition>
     <skos:example>AMC Early Presidents</skos:example>
-    <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300025976"/>
+    <skos:example>Bibliography of Science Fiction</skos:example>
+    <skos:example>Cushing Exhibit Catalogs</skos:example>
+    <skos:example>La Linda Poblana</skos:example>
+    <skos:example>Minutes of Houston Oil Company</skos:example>
+    <skos:example>Nicholas A. Basbanes - The Eternal Passion</skos:example>
+    <skos:example>Primeros Libros</skos:example>
+    <skos:example>William Fairfax Gray Diary</skos:example>
+    <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300060417"/>
+    <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/Document"/>
+    <skos:related rdf:resource="https://w3id.org/tamu/dc-types/BookADO"/>
+    <skos:related rdf:resource="https://w3id.org/tamu/dc-types/ManuscriptADO"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Container">
+    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+    <skos:prefLabel xml:lang="en">Container</skos:prefLabel>
+    <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
+    <skos:definition xml:lang="en">Digital surrogate of receptacles or formed or flexible coverings designed to hold, store, or ship objects or substances.</skos:definition>
+    <skos:example>Cherokee Freedmen Collection</skos:example>
+    <skos:relatedMatch rdf:resource="http://vocab.getty.edu/page/aat/300197197"/>
     <skos:related>
-      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/CollectionADO">
+      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Box_FolderADO">
         <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-        <skos:prefLabel xml:lang="en">Collection ADO</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Box_Folder ADO</skos:prefLabel>
         <dcterms:source xml:lang="en">ADO Types</dcterms:source>
-        <skos:definition xml:lang="en">A digital object collection on Archipelago of objects or materials having a focal characteristic and that have been brought together by an individual or organization. A collection comprises multiple items that are conceptually or physically arranged together for the purpose of cataloging or retrieval. A collection differs from an archival group because the items in a collection are bound informally for convenience and do not necessarily share a common provenance or otherwise meet the criteria for an archival group. Collection-level cataloging is appropriate for materials that share one or more common characteristics that make it useful for them to be clustered together. Individual items in a collection may be cataloged separately and linked to the collection. Examples of collections include a selected set of art works in a museum or archive, or separate literary works that do not form a treatise or monograph on a subject but have been combined and issued together as a whole.</skos:definition>
-        <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300025976"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Collection"/>
+        <skos:definition xml:lang="en">A digital object collection on Archipelago representing receptacles or formed or flexible coverings designed to hold, store, or ship objects or substances.</skos:definition>
+        <skos:relatedMatch rdf:resource="http://vocab.getty.edu/page/aat/300197197"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Container"/>
         <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
       </skos:Concept>
     </skos:related>
     <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Issue">
+    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+    <skos:prefLabel xml:lang="en">Issue</skos:prefLabel>
+    <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
+    <skos:definition xml:lang="en">A single issue from a publication in any medium issued in successive parts bearing numerical or chronological designations and intended to be continued indefinitely, such as periodicals, newspapers, annuals (reports, yearbooks, etc.), journals, memoires, proceedings, transactions, etc., of societies and numbered monographic series.</skos:definition>
+    <skos:example>AMC Yell Books</skos:example>
+    <skos:example>Committee on South Asian Women Bulletin</skos:example>
+    <skos:example>Geographic Atlas of the United States</skos:example>
+    <skos:example>Rancher's Roundup</skos:example>
+    <skos:example>Texas A&amp;M Athletic Programs - Football</skos:example>
+    <skos:example>Texas A&amp;M Yearbooks</skos:example>
+    <skos:example>University Catalogs</skos:example>
+    <skos:relatedMatch rdf:resource="http://vocab.getty.edu/page/aat/300026642"/>
+    <skos:relatedMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2014026174"/>
+    <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/Document"/>
+    <skos:related rdf:resource="https://w3id.org/tamu/dc-types/BookADO"/>
+    <skos:related rdf:resource="https://w3id.org/tamu/dc-types/JournalADO"/>
   </skos:Concept>
   <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Album">
     <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
@@ -368,88 +378,11 @@
     </skos:related>
     <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
   </skos:Concept>
-  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/MapADO">
+  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/LeafADO">
     <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-    <skos:prefLabel xml:lang="en">Map ADO</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Leaf ADO</skos:prefLabel>
     <dcterms:source xml:lang="en">ADO Types</dcterms:source>
-    <skos:definition xml:lang="en">An digital object or digital object collection on Archipelago that depicts graphic or photogrammetric representations of the Earth's surface or a part of it, including physical features and political boundaries, where each point corresponds to a geographical or celestial position according to a definite scale or projection.</skos:definition>
-    <skos:relatedMatch rdf:resource="http://vocab.getty.edu/page/aat/300028094"/>
-    <skos:relatedMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2011026387"/>
-    <skos:related>
-      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Map">
-        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-        <skos:prefLabel xml:lang="en">Map</skos:prefLabel>
-        <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
-        <skos:definition xml:lang="en">Digital surrogate of graphic or photogrammetric representations of the Earth's surface or a part of it, including physical features and political boundaries, where each point corresponds to a geographical or celestial position according to a definite scale or projection</skos:definition>
-        <skos:example>A Time of Resolve</skos:example>
-        <skos:example>Charting Texas</skos:example>
-        <skos:example>Cushing Historical Images Collection</skos:example>
-        <skos:example>Historic Maps of Cuba</skos:example>
-        <skos:example>Maps of Brazos County</skos:example>
-        <skos:example>Stephen F. Austin 1830 Map of Texas</skos:example>
-        <skos:example>Stephen Powys Marks London</skos:example>
-        <skos:example>Woellhof Maps</skos:example>
-        <skos:example>World War II Service Maps</skos:example>
-        <skos:relatedMatch rdf:resource="http://vocab.getty.edu/page/aat/300028094"/>
-        <skos:relatedMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2011026387"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/MapADO"/>
-        <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
-      </skos:Concept>
-    </skos:related>
-    <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
-  </skos:Concept>
-  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/ArchitecturalDrawing">
-    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-    <skos:prefLabel xml:lang="en">Architectural drawing</skos:prefLabel>
-    <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
-    <skos:definition xml:lang="en">Drawings of architecture and drawings for architectural projects, whether the project was executed or not. The term may also refer to any image in a two-dimensional medium that serves this same purpose, including prints and computer images.</skos:definition>
-    <skos:example>A Time of Resolve</skos:example>
-    <skos:example>Cushing Historical Image Collection</skos:example>
-    <skos:example>Raiford Stripling Collection</skos:example>
-    <skos:exactMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2017027217"/>
-    <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/VisualWork"/>
-    <skos:related rdf:resource="https://w3id.org/tamu/dc-types/ImageADO"/>
-  </skos:Concept>
-  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/WebArchiveADO">
-    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-    <skos:prefLabel xml:lang="en">WebArchive ADO</skos:prefLabel>
-    <dcterms:source xml:lang="en">ADO Types</dcterms:source>
-    <skos:definition xml:lang="en">A digital object on Archipelago containing collections of preserved web pages.</skos:definition>
-    <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300380353"/>
-    <skos:exactMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2019026060"/>
-    <skos:related>
-      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/WebArchive">
-        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-        <skos:prefLabel xml:lang="en">WebArchive</skos:prefLabel>
-        <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
-        <skos:definition xml:lang="en">Collections of preserved web pages.</skos:definition>
-        <skos:example>Web Archives</skos:example>
-        <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300380353"/>
-        <skos:exactMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2019026060"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/WebArchiveADO"/>
-        <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
-      </skos:Concept>
-    </skos:related>
-    <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
-  </skos:Concept>
-  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Container">
-    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-    <skos:prefLabel xml:lang="en">Container</skos:prefLabel>
-    <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
-    <skos:definition xml:lang="en">Digital surrogate of receptacles or formed or flexible coverings designed to hold, store, or ship objects or substances.</skos:definition>
-    <skos:example>Cherokee Freedmen Collection</skos:example>
-    <skos:relatedMatch rdf:resource="http://vocab.getty.edu/page/aat/300197197"/>
-    <skos:related>
-      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Box_FolderADO">
-        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-        <skos:prefLabel xml:lang="en">Box_Folder ADO</skos:prefLabel>
-        <dcterms:source xml:lang="en">ADO Types</dcterms:source>
-        <skos:definition xml:lang="en">A digital object collection on Archipelago representing receptacles or formed or flexible coverings designed to hold, store, or ship objects or substances.</skos:definition>
-        <skos:relatedMatch rdf:resource="http://vocab.getty.edu/page/aat/300197197"/>
-        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Container"/>
-        <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
-      </skos:Concept>
-    </skos:related>
+    <skos:definition xml:lang="en">An digital object on Archipelago that requires a place to store HTR and ispartof a Manuscript ADO.</skos:definition>
     <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
   </skos:Concept>
   <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Postcard">
@@ -465,55 +398,51 @@
     <skos:related rdf:resource="https://w3id.org/tamu/dc-types/BookADO"/>
     <skos:related rdf:resource="https://w3id.org/tamu/dc-types/ImageADO"/>
   </skos:Concept>
-  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Photograph">
+  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Audio">
     <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-    <skos:prefLabel xml:lang="en">Photograph</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Audio</skos:prefLabel>
     <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
-    <skos:definition xml:lang="en">Digital surrogates of still images produced from radiation-sensitive materials (sensitive to light, electron beams, or nuclear radiation), generally by means of the chemical action of light on a sensitive film, paper, glass, or metal. Photographs may be positive or negative, opaque or transparent.</skos:definition>
-    <skos:example>Bryan 150th</skos:example>
-    <skos:example>A Time of Resolve</skos:example>
-    <skos:example>AMC Early Presidents</skos:example>
-    <skos:example>College of Medicine Class Photographs</skos:example>
-    <skos:example>College of Veterinary Medicine Images</skos:example>
-    <skos:example>Cushing Historical Images Collection</skos:example>
-    <skos:example>Nicholas A. Basbanes - The Eternal Passion</skos:example>
-    <skos:example>Selected Works from University Archives</skos:example>
-    <skos:example>Texas A&amp;M Building history</skos:example>
-    <skos:example>Toward a Better Living</skos:example>
-    <skos:example>University Libraries Events</skos:example>
-    <skos:example>Wheelan</skos:example>
-    <skos:exactMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2017027249"/>
-    <skos:relatedMatch rdf:resource="http://vocab.getty.edu/page/aat/300046300"/>
-    <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/VisualWork"/>
-    <skos:related rdf:resource="https://w3id.org/tamu/dc-types/ImageADO"/>
-  </skos:Concept>
-  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/AudioObjectADO">
-    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-    <skos:prefLabel xml:lang="en">AudioObject ADO</skos:prefLabel>
-    <dcterms:source xml:lang="en">ADO Types</dcterms:source>
-    <skos:definition xml:lang="en">A digital object or digital object collection hosted on Archipelago that includes a digital surrogate for discs, tapes, filaments, or other media on which sound has been recorded.</skos:definition>
+    <skos:definition xml:lang="en">Discs, tapes, filaments, or other media on which sound has been recorded.</skos:definition>
+    <skos:example>Audio Interviews Nicholas Basbanes</skos:example>
+    <skos:example>NASA Recordings</skos:example>
+    <skos:example>Los Palabristas</skos:example>
+    <skos:example>Owens Folk Music</skos:example>
+    <skos:example>Texas A&amp;M Forest Service</skos:example>
     <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300028633"/>
     <skos:exactMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2011026594"/>
-    <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Interview"/>
-    <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Music"/>
-    <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Audio"/>
-    <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
-  </skos:Concept>
-  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/ManuscriptADO">
-    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-    <skos:prefLabel xml:lang="en">Manuscript ADO</skos:prefLabel>
-    <dcterms:source xml:lang="en">ADO Types</dcterms:source>
-    <skos:definition xml:lang="en">An digital object or digital object collection on Archipelago that requires a place to store HTR.</skos:definition>
-    <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Book"/>
-    <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Correspondence"/>
-    <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Document"/>
-    <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
-  </skos:Concept>
-  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/LeafADO">
-    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
-    <skos:prefLabel xml:lang="en">Leaf ADO</skos:prefLabel>
-    <dcterms:source xml:lang="en">ADO Types</dcterms:source>
-    <skos:definition xml:lang="en">An digital object on Archipelago that requires a place to store HTR and ispartof a Manuscript ADO.</skos:definition>
+    <skos:narrower rdf:resource="https://w3id.org/tamu/dc-types/Interview"/>
+    <skos:narrower rdf:resource="https://w3id.org/tamu/dc-types/Music"/>
+    <skos:related>
+      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/AudioObjectADO">
+        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+        <skos:prefLabel xml:lang="en">AudioObject ADO</skos:prefLabel>
+        <dcterms:source xml:lang="en">ADO Types</dcterms:source>
+        <skos:definition xml:lang="en">A digital object or digital object collection hosted on Archipelago that includes a digital surrogate for discs, tapes, filaments, or other media on which sound has been recorded.</skos:definition>
+        <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300028633"/>
+        <skos:exactMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2011026594"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Interview"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Music"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Audio"/>
+        <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
+      </skos:Concept>
+    </skos:related>
+    <skos:related>
+      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/StreamingVideoADO">
+        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+        <skos:prefLabel xml:lang="en">StreamingVideo ADO</skos:prefLabel>
+        <dcterms:source xml:lang="en">ADO Types</dcterms:source>
+        <skos:definition xml:lang="en">A digital object or digital object collection hosted on Avalon but streamed through Archipelago that includes digital surrogate for discs, tapes, filaments, or other media on which sound has been recorded and/or manifestations of motion pictures, stored electronically, in any media or digitized format.</skos:definition>
+        <skos:relatedMatch rdf:resource="http://vocab.getty.edu/page/aat/300028682"/>
+        <skos:relatedMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2011026723"/>
+        <skos:relatedMatch rdf:resource="http://vocab.getty.edu/page/aat/300028633"/>
+        <skos:relatedMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2011026594"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Interview"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Music"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Audio"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Video"/>
+        <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
+      </skos:Concept>
+    </skos:related>
     <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
   </skos:Concept>
   <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/BookJacket">
@@ -525,5 +454,74 @@
     <skos:relatedMatch rdf:resource="http://vocab.getty.edu/page/aat/300195133"/>
     <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/VisualWork"/>
     <skos:related rdf:resource="https://w3id.org/tamu/dc-types/ImageADO"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/DecoratedPaper">
+    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+    <skos:prefLabel xml:lang="en">Decorated paper</skos:prefLabel>
+    <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
+    <skos:definition xml:lang="en">Digital surrogates of paper decorated by various means, which might include marbling, stencilling, dyeing, or block printing; to be used for endpapers, wallpaper, wrapping objects, or as a ground for printing or calligraphy.</skos:definition>
+    <skos:example>Berger-Cloonan</skos:example>
+    <skos:relatedMatch rdf:resource="http://vocab.getty.edu/page/aat/300265580"/>
+    <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/VisualWork"/>
+    <skos:related rdf:resource="https://w3id.org/tamu/dc-types/ImageADO"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/PageADO">
+    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+    <skos:prefLabel xml:lang="en">Page ADO</skos:prefLabel>
+    <dcterms:source xml:lang="en">ADO Types</dcterms:source>
+    <skos:definition xml:lang="en">A digital object on Archipelago that requires OCR and ispartof a Book ADO.</skos:definition>
+    <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/ArchitecturalDrawing">
+    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+    <skos:prefLabel xml:lang="en">Architectural drawing</skos:prefLabel>
+    <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
+    <skos:definition xml:lang="en">Drawings of architecture and drawings for architectural projects, whether the project was executed or not. The term may also refer to any image in a two-dimensional medium that serves this same purpose, including prints and computer images.</skos:definition>
+    <skos:example>A Time of Resolve</skos:example>
+    <skos:example>Cushing Historical Image Collection</skos:example>
+    <skos:example>Raiford Stripling Collection</skos:example>
+    <skos:exactMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2017027217"/>
+    <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/VisualWork"/>
+    <skos:related rdf:resource="https://w3id.org/tamu/dc-types/ImageADO"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Collection">
+    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+    <skos:prefLabel xml:lang="en">Collection</skos:prefLabel>
+    <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
+    <skos:definition xml:lang="en">Accumulated groups of objects or materials having a focal characteristic and that have been brought together by an individual or organization. A collection comprises multiple items that are conceptually or physically arranged together for the purpose of cataloging or retrieval. A collection differs from an archival group because the items in a collection are bound informally for convenience and do not necessarily share a common provenance or otherwise meet the criteria for an archival group. Collection-level cataloging is appropriate for materials that share one or more common characteristics that make it useful for them to be clustered together. Individual items in a collection may be cataloged separately and linked to the collection. Examples of collections include a selected set of art works in a museum or archive, or separate literary works that do not form a treatise or monograph on a subject but have been combined and issued together as a whole.</skos:definition>
+    <skos:example>AMC Early Presidents</skos:example>
+    <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300025976"/>
+    <skos:related>
+      <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/CollectionADO">
+        <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+        <skos:prefLabel xml:lang="en">Collection ADO</skos:prefLabel>
+        <dcterms:source xml:lang="en">ADO Types</dcterms:source>
+        <skos:definition xml:lang="en">A digital object collection on Archipelago of objects or materials having a focal characteristic and that have been brought together by an individual or organization. A collection comprises multiple items that are conceptually or physically arranged together for the purpose of cataloging or retrieval. A collection differs from an archival group because the items in a collection are bound informally for convenience and do not necessarily share a common provenance or otherwise meet the criteria for an archival group. Collection-level cataloging is appropriate for materials that share one or more common characteristics that make it useful for them to be clustered together. Individual items in a collection may be cataloged separately and linked to the collection. Examples of collections include a selected set of art works in a museum or archive, or separate literary works that do not form a treatise or monograph on a subject but have been combined and issued together as a whole.</skos:definition>
+        <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300025976"/>
+        <skos:related rdf:resource="https://w3id.org/tamu/dc-types/Collection"/>
+        <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
+      </skos:Concept>
+    </skos:related>
+    <skos:topConceptOf rdf:resource="https://w3id.org/tamu/dc-types/"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Report">
+    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+    <skos:prefLabel xml:lang="en">Report</skos:prefLabel>
+    <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
+    <skos:definition xml:lang="en">Official or formal records of a special investigation, in the form of documents containing presentations of facts, proceedings, investigations, or events.</skos:definition>
+    <skos:example>Frederick Cuny/INTERTECT</skos:example>
+    <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300027267"/>
+    <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/Document"/>
+    <skos:related rdf:resource="https://w3id.org/tamu/dc-types/BookADO"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="https://w3id.org/tamu/dc-types/Article">
+    <skos:inScheme rdf:resource="https://w3id.org/tamu/dc-types/"/>
+    <skos:prefLabel xml:lang="en">Article</skos:prefLabel>
+    <dcterms:source xml:lang="en">Browse/Search Types</dcterms:source>
+    <skos:definition xml:lang="en">Literary compositions prepared for publication as an independent portion of a magazine, newspaper, encyclopedia, or other work.</skos:definition>
+    <skos:example>Rancher's Roundup</skos:example>
+    <skos:exactMatch rdf:resource="http://vocab.getty.edu/page/aat/300048715"/>
+    <skos:broader rdf:resource="https://w3id.org/tamu/dc-types/Document"/>
+    <skos:related rdf:resource="https://w3id.org/tamu/dc-types/BookADO"/>
   </skos:Concept>
 </rdf:RDF>

@@ -9,6 +9,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # scripts/build_site.py re-execs itself with this set regardless, but
+      # pinning it here too keeps CI output reproducible if that guard is
+      # ever removed. See scripts/build_site.py for why it matters.
+      PYTHONHASHSEED: "0"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
