@@ -23,6 +23,7 @@ tamu-dc-types.ttl        Generated: Turtle serialization
 tamu-dc-types.rdf        Generated: RDF/XML serialization
 index.html               Generated: human-readable browser (GitHub Pages site)
 w3id.org.htaccess        Content-negotiation rules to submit to w3id.org
+w3id.org.tamu-readme.md  Namespace claim for ids/tamu/ in the w3id.org repo
 ```
 
 **`source/*.yml` is the only file you should hand-edit.** The `.ttl`, `.rdf`,
@@ -43,9 +44,7 @@ are out of sync with `source/*.yml`, so regenerate before pushing.
 
 The script also prints a warning for any `skos:broader` / `skos:narrower` /
 `skos:related` reference in the source YAML that doesn't match an actual
-concept (currently: `Issue` references a `Journal ADO` that doesn't exist in
-`ado_types.yml` — likely a typo for `Book ADO`, worth confirming with whoever
-maintains the source).
+concept, so you catch typos before they become dangling URIs.
 
 ## Publishing on GitHub Pages
 
@@ -83,9 +82,17 @@ curl -L -H "Accept: text/html"        https://w3id.org/tamu/dc-types/
 To activate this:
 
 1. Fork [perma-id/w3id.org](https://github.com/perma-id/w3id.org).
-2. Add this repo's `w3id.org.htaccess` as `tamu/dc-types/.htaccess` in that
-   fork.
-3. Open a PR against `perma-id/w3id.org` per their contribution guidelines.
+2. Add this repo's `w3id.org.htaccess` as `ids/tamu/dc-types/.htaccess` in
+   that fork, and `w3id.org.tamu-readme.md` as `ids/tamu/README.md` (claims
+   the parent `/tamu/` namespace so no one else can register something else
+   under it — w3id's checker flags this as a warning otherwise).
+3. Run their checker before opening the PR:
+   ```bash
+   cd tools/check && npm ci   # once
+   node bin/w3id-check.js ../../ids/tamu
+   ```
+4. Open a PR against `perma-id/w3id.org` per
+   [their contribution guidelines](https://w3id.org/docs/guides/create-an-id).
 
 Until that PR is merged, the vocabulary is still fully usable directly at
 `https://tamulib-dc-labs.github.io/tamu-dc-ontology/` — the `w3id.org`
@@ -105,7 +112,6 @@ files. Things worth a maintainer's review before calling it final:
 
 - Term slugs (e.g. `Image ADO` → `ImageADO`) are generated automatically;
   rename any that read awkwardly before URIs are published/cited anywhere.
-- The `Journal ADO` dangling reference noted above.
 - Whether ADO Types and Browse/Search Types should stay in one
   `ConceptScheme` (current approach) or be split into two linked schemes.
 - Licensing/rights statement for the vocabulary (none is currently declared).
